@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bayron Vásquez · Desarrollador de software</title>
+<meta name="description" content="Portafolio de Bayron de Jesús Vásquez Castillo: tecnólogo en desarrollo de software con base en redes e infraestructura. Proyectos en Flask, Python y SQL.">
+<style>
+:root{
+  --bg:#f6f8fb; --card:#fff; --ink:#14213d; --muted:#5a6785; --line:#dde3ee;
+  --brand:#0b3d91; --brand-2:#1f6feb; --chip:#e8f0fe; --chip-ink:#0b3d91;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0d1424; --card:#151f35; --ink:#e8edf7; --muted:#9aa8c7; --line:#25324f;
+        --brand:#7aa7ff; --brand-2:#9bbcff; --chip:#1d2b4a; --chip-ink:#b9d0ff;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.nav{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+header.nav .wrap{display:flex;gap:20px;align-items:center;justify-content:space-between;height:56px}
+header.nav b{font-weight:700}
+header.nav nav{display:flex;gap:18px;font-size:.95rem}
+header.nav nav a{color:var(--muted)}
+.hero{padding:64px 0 40px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
+.hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:0 0 8px}
+.hero .rol{color:var(--brand);font-weight:600;font-size:1.15rem;margin:0 0 16px}
+.hero p{color:var(--muted);max-width:56ch;margin:0 0 24px}
+.foto{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid var(--line);background:var(--chip);display:grid;place-items:center;font-size:3rem;font-weight:700;color:var(--chip-ink)}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:10px 18px;border-radius:8px;border:1px solid var(--brand);font-weight:600}
+.btn.p{background:var(--brand);color:#fff}
+@media (prefers-color-scheme:dark){.btn.p{color:#0d1424}}
+.btn:hover{text-decoration:none;opacity:.9}
+section{padding:40px 0}
+section>.wrap>h2{font-size:1.5rem;margin:0 0 20px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.card h3{margin:0 0 4px;font-size:1.15rem}
+.card .sub{color:var(--muted);font-size:.9rem;margin:0 0 10px}
+.card ul{margin:10px 0 0;padding-left:18px;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chip{background:var(--chip);color:var(--chip-ink);padding:2px 10px;border-radius:99px;font-size:.82rem;font-weight:600}
+.proj{display:grid;gap:18px}
+.nota{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);padding-left:10px;margin-top:12px}
+.tl{border-left:2px solid var(--line);margin-left:6px;padding-left:20px}
+.tl .it{position:relative;margin-bottom:22px}
+.tl .it::before{content:"";position:absolute;left:-27px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--brand)}
+.tl h3{margin:0;font-size:1.05rem}
+.tl .sub{color:var(--muted);font-size:.9rem}
+footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem;text-align:center;border-top:1px solid var(--line)}
+@media (max-width:640px){
+  .hero{grid-template-columns:1fr;text-align:left}
+  .foto{order:-1;width:120px;height:120px;font-size:2.2rem}
+  header.nav nav{gap:12px;font-size:.85rem}
+}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <b>Bayron Vásquez</b>
+  <nav><a href="#proyectos">Proyectos</a><a href="#habilidades">Habilidades</a><a href="#experiencia">Experiencia</a><a href="#formacion">Formación</a><a href="#contacto">Contacto</a></nav>
+</div></header>
+
+<main>
+<div class="wrap hero">
+  <div>
+    <h1>Bayron de Jesús Vásquez Castillo</h1>
+    <p class="rol">Desarrollador de software · Python y Flask</p>
+    <p>Tecnólogo en Desarrollo de Sistemas de Información de Software, con base sólida en redes e infraestructura tras más de cinco años en soporte técnico. Construyo aplicaciones web y de escritorio con bases de datos relacionales, pruebas automatizadas y despliegue propio.</p>
+    <div class="btns">
+      <a class="btn p" href="#contacto">Contáctame</a>
+      <a class="btn" href="Hoja_de_Vida_Bayron_Vasquez.pdf">Descargar hoja de vida</a>
+    </div>
+  </div>
+  <!-- Pon tu foto en img/foto.jpg; si no existe se muestran las iniciales -->
+  <img class="foto" src="img/foto.jpg" alt="Foto de Bayron Vásquez" onerror="this.outerHTML='<div class=&quot;foto&quot;>BV</div>'">
+</div>
+
+<section id="proyectos"><div class="wrap">
+  <h2>Proyectos</h2>
+  <div class="proj">
+
+    <article class="card">
+      <h3>RespiraKids — seguimiento de enfermedades respiratorias infantiles</h3>
+      <p class="sub">Proyecto de grado · Corporación Universitaria Rafael Núñez · 2026</p>
+      <p>Plataforma web para que cuidadores registren síntomas de niños y reciban una clasificación tipo semáforo (verde, amarillo, rojo) basada en reglas clínicas AIEPI, con un panel para profesionales de salud.</p>
+      <ul>
+        <li>Motor de reglas clínicas versionado (<code>v1-aiepi</code>) con acta de validación clínica firmada.</li>
+        <li>Roles (cuidador, profesional, administrador), autenticación, auditoría y gestión de privacidad.</li>
+        <li>Módulos de síntomas, medicamentos, mensajería, videollamadas y asistente con IA.</li>
+        <li>Modelo ML complementario (Random Forest) entrenado con datos <b>sintéticos</b>; no altera la clasificación clínica.</li>
+        <li>Más de 25 archivos de pruebas automatizadas, integración continua y despliegue con Nginx, Gunicorn y systemd.</li>
+      </ul>
+      <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">SQLAlchemy</span><span class="chip">PostgreSQL / SQLite</span><span class="chip">scikit-learn</span><span class="chip">Nginx</span><span class="chip">CI</span></div>
+      <p class="nota">Proyecto académico. El modelo de aprendizaje automático es experimental y no se usa para decisiones de salud.</p>
+    </article>
+
+    <article class="card">
+      <h3>CEFAE Proyector — sistema de proyección para iglesias</h3>
+      <p class="sub">Producto de software con licencia · 2026</p>
+      <p>Panel de control y visor para proyectar Biblia, canciones, fondos y anuncios en una segunda pantalla, con atajos de teclado y funcionamiento sin internet.</p>
+      <ul>
+        <li>Actualización en tiempo real entre panel y visor con WebSockets.</li>
+        <li>Instalador para Windows, sistema de licencia con prueba de 30 días.</li>
+        <li>Página de producto publicada en GitHub Pages.</li>
+      </ul>
+      <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">Socket.IO</span><span class="chip">SQLite</span><span class="chip">JavaScript</span></div>
+      <p><a href="https://jovenesdevanguardia.github.io/cefae-proyector/">Ver sitio del producto →</a></p>
+    </article>
+
+    <article class="card">
+      <h3>Laboratorio de redes en EVE-NG</h3>
+      <p class="sub">Práctica de infraestructura</p>
+      <p>Topologías de red simuladas para practicar direccionamiento IP, enrutamiento y conmutación, con guía paso a paso documentada.</p>
+      <div class="chips"><span class="chip">EVE-NG</span><span class="chip">Cisco</span><span class="chip">LAN</span></div>
+    </article>
+
+  </div>
+</div></section>
+
+<section id="habilidades"><div class="wrap">
+  <h2>Habilidades técnicas</h2>
+  <div class="grid">
+    <div class="card"><h3>Desarrollo</h3><div class="chips"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">Flask</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">POO</span></div></div>
+    <div class="card"><h3>Bases de datos</h3><div class="chips"><span class="chip">SQL</span><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">SQLite</span><span class="chip">Modelado relacional</span></div></div>
+    <div class="card"><h3>Redes e infraestructura</h3><div class="chips"><span class="chip">LAN</span><span class="chip">Cableado estructurado</span><span class="chip">Cisco (CCNA intro)</span><span class="chip">Windows</span><span class="chip">Linux</span></div></div>
+    <div class="card"><h3>Prácticas</h3><div class="chips"><span class="chip">Pruebas automatizadas</span><span class="chip">Git</span><span class="chip">Documentación técnica</span><span class="chip">Despliegue</span></div></div>
+  </div>
+</div></section>
+
+<section id="experiencia"><div class="wrap">
+  <h2>Experiencia</h2>
+  <div class="tl">
+    <div class="it"><h3>Tecnólogo en Sistemas · R&amp;S Soluciones</h3><div class="sub">2024 – actualidad</div>Soporte técnico presencial y remoto, mantenimiento de equipos, redes LAN, inventario de activos e informes técnicos.</div>
+    <div class="it"><h3>Técnico en Sistemas · Dcaro Solution</h3><div class="sub">2023</div>Mantenimiento de servidores, equipos de escritorio y portátiles; instalación y configuración de sistemas y aplicaciones.</div>
+    <div class="it"><h3>Auxiliar de Sistemas · Universidad Jorge Tadeo Lozano</h3><div class="sub">jun 2022 – ene 2023</div>Soporte a usuarios administrativos y académicos; responsable del funcionamiento de software, hardware y redes.</div>
+  </div>
+</div></section>
+
+<section id="formacion"><div class="wrap">
+  <h2>Formación y certificaciones</h2>
+  <div class="grid">
+    <div class="card"><h3>Estudios</h3><ul>
+      <li>Tecnólogo en Desarrollo de Sistemas de Información de Software — Corporación Universitaria Rafael Núñez (2026)</li>
+      <li>Tecnólogo en Gestión de Redes de Datos — SENA (2022)</li>
+      <li>Técnico en Sistemas — SENA (2018)</li>
+      <li>Bachiller Técnico en Sistemas — I.E. Alberto Elías Fernández Baena (2018)</li></ul></div>
+    <div class="card"><h3>Cursos</h3><ul>
+      <li>Fundamentos de la ciberseguridad — Google / Coursera (2025) · <a href="https://coursera.org/verify/XP8VQHVY3C66">verificar</a></li>
+      <li>CCNA Routing and Switching: Introducción a redes — Cisco Networking Academy (2020)</li>
+      <li>Introducción al diseño de redes — SENA, 60 h (2020)</li>
+      <li>Fundamentos de redes de datos — SENA, 60 h (2020)</li>
+      <li>Administración de recursos humanos — SENA, 40 h (2020)</li></ul></div>
+  </div>
+</div></section>
+
+<section id="contacto"><div class="wrap">
+  <h2>Contacto</h2>
+  <div class="card">
+    <p>Cartagena de Indias, Colombia. Disponible para roles de desarrollo de software y proyectos web.</p>
+    <div class="btns">
+      <a class="btn p" href="mailto:bayronvasquezz.c@gmail.com">bayronvasquezz.c@gmail.com</a>
+      <a class="btn" href="https://wa.me/573225926739">WhatsApp</a>
+      <a class="btn" href="https://www.linkedin.com/in/bayron-de-jesus-vasquez-castillo-412749250/">LinkedIn</a>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Bayron de Jesús Vásquez Castillo</div></footer>
+</body>
+</html>
