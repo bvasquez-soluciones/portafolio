@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif">
+<title id="t">Conversación de asesoría</title><desc id="d">Dos globos de diálogo, tu necesidad y mi recomendación, con una bombilla que representa una idea clara.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f1a30"/><stop offset="1" stop-color="#1d2d52"/></linearGradient>
+<linearGradient id="ac" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#818cf8"/></linearGradient>
+</defs>
+<rect width="640" height="420" rx="28" fill="url(#bg)"/>
+<g opacity=".08" stroke="#fff" stroke-width="1"><path d="M40 0V420"/><path d="M80 0V420"/><path d="M120 0V420"/><path d="M160 0V420"/><path d="M200 0V420"/><path d="M240 0V420"/><path d="M280 0V420"/><path d="M320 0V420"/><path d="M360 0V420"/><path d="M400 0V420"/><path d="M440 0V420"/><path d="M480 0V420"/><path d="M520 0V420"/><path d="M560 0V420"/><path d="M600 0V420"/><path d="M0 40H640"/><path d="M0 80H640"/><path d="M0 120H640"/><path d="M0 160H640"/><path d="M0 200H640"/><path d="M0 240H640"/><path d="M0 280H640"/><path d="M0 320H640"/><path d="M0 360H640"/><path d="M0 400H640"/></g>
+
+<path d="M60 90h300a22 22 0 0 1 22 22v110a22 22 0 0 1-22 22H160l-48 40v-40H60a22 22 0 0 1-22-22V112a22 22 0 0 1 22-22z" fill="#17233f" stroke="#33466f" stroke-width="3"/>
+<text x="66" y="118" font-size="17" font-weight="700" fill="#a3b3cc">Tu necesidad</text>
+<rect x="66" y="132" width="190" height="12" rx="6" fill="#33466f"/><rect x="66" y="158" width="250" height="12" rx="6" fill="#33466f"/><rect x="66" y="184" width="140" height="12" rx="6" fill="#33466f"/>
+<path d="M300 200h250a22 22 0 0 1 22 22v90a22 22 0 0 1-22 22h-38v40l-48-40H300a22 22 0 0 1-22-22v-90a22 22 0 0 1 22-22z" fill="url(#ac)"/>
+<circle cx="330" cy="262" r="16" fill="#0b1220" fill-opacity=".25"/>
+<path d="M322 262l6 6 11-12" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="360" y="258" font-size="20" font-weight="800" fill="#06121f">Mi recomendación</text>
+<text x="360" y="284" font-size="16" fill="#06121f" opacity=".85">según tu presupuesto</text>
+<g transform="translate(540 52)"><circle cx="0" cy="34" r="34" fill="#fbbf24" opacity=".92"/><rect x="-14" y="64" width="28" height="14" rx="5" fill="#a3b3cc"/><rect x="-10" y="80" width="20" height="8" rx="4" fill="#a3b3cc"/><path d="M-10 36l8 10 12-16" fill="none" stroke="#0b1220" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="320" y="404" text-anchor="middle" font-size="22" font-weight="700" fill="#e8eef8">Una conversación clara, sin tecnicismos</text>
+</svg>

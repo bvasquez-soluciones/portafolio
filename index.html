@@ -3,176 +3,906 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bayron Vásquez · Desarrollador de software</title>
-<meta name="description" content="Portafolio de Bayron de Jesús Vásquez Castillo: tecnólogo en desarrollo de software con base en redes e infraestructura. Proyectos en Flask, Python y SQL.">
+<title>Bayron Vásquez · Soporte técnico, redes y desarrollo de software en Cartagena</title>
+<meta name="description" content="Profesional de tecnología en Cartagena, Colombia: soporte técnico, redes, páginas web, software a la medida y bases de datos. Mira mis proyectos y solicita una cotización.">
+<link rel="canonical" href="https://jovenesdevanguardia.github.io/portafolio/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:title" content="Bayron Vásquez · Soluciones tecnológicas">
+<meta property="og:description" content="Soporte técnico, redes, páginas web, software a la medida y bases de datos. Proyectos reales y cotización directa.">
+<meta property="og:url" content="https://jovenesdevanguardia.github.io/portafolio/">
+<meta property="og:image" content="https://jovenesdevanguardia.github.io/portafolio/img/foto.jpg">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Bayron de Jesús Vásquez Castillo", "alternateName": "Bayron Vásquez", "jobTitle": "Profesional de tecnología: soporte técnico, redes y desarrollo de software", "url": "https://jovenesdevanguardia.github.io/portafolio/", "image": "https://jovenesdevanguardia.github.io/portafolio/img/foto.jpg", "email": "mailto:bayronvasquezz.c@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Cartagena", "addressCountry": "CO"}, "sameAs": ["https://www.linkedin.com/in/bayron-de-jesus-vasquez-castillo-412749250/", "https://github.com/jovenesdevanguardia"], "knowsAbout": ["Soporte técnico", "Redes", "Python", "Flask", "PostgreSQL", "SQL", "Desarrollo web"]}</script>
 <style>
 :root{
-  --bg:#f6f8fb; --card:#fff; --ink:#14213d; --muted:#5a6785; --line:#dde3ee;
-  --brand:#0b3d91; --brand-2:#1f6feb; --chip:#e8f0fe; --chip-ink:#0b3d91;
+  color-scheme:dark;
+  --bg:#0b1220; --bg2:#0f1a30; --surface:#121c33; --surface2:#17233f; --line:#243456;
+  --ink:#e8eef8; --muted:#a3b3cc; --accent:#38bdf8; --accent2:#818cf8; --on-accent:#06121f;
+  --ok:#34d399; --warn:#fbbf24; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.35);
 }
-@media (prefers-color-scheme:dark){
-  :root{--bg:#0d1424; --card:#151f35; --ink:#e8edf7; --muted:#9aa8c7; --line:#25324f;
-        --brand:#7aa7ff; --brand-2:#9bbcff; --chip:#1d2b4a; --chip-ink:#b9d0ff;}
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:#f5f8fd; --bg2:#eaf0fa; --surface:#ffffff; --surface2:#f1f5fb; --line:#d6dfee;
+  --ink:#0f172a; --muted:#475569; --accent:#0369a1; --accent2:#4f46e5; --on-accent:#ffffff;
+  --ok:#047857; --warn:#92400e; --shadow:0 10px 30px rgba(15,23,42,.10);
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    color-scheme:light;
+    --bg:#f5f8fd; --bg2:#eaf0fa; --surface:#ffffff; --surface2:#f1f5fb; --line:#d6dfee;
+    --ink:#0f172a; --muted:#475569; --accent:#0369a1; --accent2:#4f46e5; --on-accent:#ffffff;
+    --ok:#047857; --warn:#92400e; --shadow:0 10px 30px rgba(15,23,42,.10);
+  }
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
-a{color:var(--brand-2);text-decoration:none}
-a:hover{text-decoration:underline}
-.wrap{max-width:960px;margin:0 auto;padding:0 20px}
-header.nav{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
-header.nav .wrap{display:flex;gap:20px;align-items:center;justify-content:space-between;height:56px}
-header.nav b{font-weight:700}
-header.nav nav{display:flex;gap:18px;font-size:.95rem}
-header.nav nav a{color:var(--muted)}
-.hero{padding:64px 0 40px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
-.hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:0 0 8px}
-.hero .rol{color:var(--brand);font-weight:600;font-size:1.15rem;margin:0 0 16px}
-.hero p{color:var(--muted);max-width:56ch;margin:0 0 24px}
-.foto{width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:center 15%;border:4px solid var(--line);background:var(--chip);display:grid;place-items:center;font-size:3rem;font-weight:700;color:var(--chip-ink)}
-.btns{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-block;padding:10px 18px;border-radius:8px;border:1px solid var(--brand);font-weight:600}
-.btn.p{background:var(--brand);color:#fff}
-@media (prefers-color-scheme:dark){.btn.p{color:#0d1424}}
-.btn:hover{text-decoration:none;opacity:.9}
-section{padding:40px 0}
-section>.wrap>h2{font-size:1.5rem;margin:0 0 20px;padding-bottom:8px;border-bottom:2px solid var(--line)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
-.card h3{margin:0 0 4px;font-size:1.15rem}
-.card .sub{color:var(--muted);font-size:.9rem;margin:0 0 10px}
-.card ul{margin:10px 0 0;padding-left:18px;color:var(--ink)}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.chip{background:var(--chip);color:var(--chip-ink);padding:2px 10px;border-radius:99px;font-size:.82rem;font-weight:600}
-.proj{display:grid;gap:18px}
-.nota{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);padding-left:10px;margin-top:12px}
-.tl{border-left:2px solid var(--line);margin-left:6px;padding-left:20px}
-.tl .it{position:relative;margin-bottom:22px}
-.tl .it::before{content:"";position:absolute;left:-27px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--brand)}
-.tl h3{margin:0;font-size:1.05rem}
-.tl .sub{color:var(--muted);font-size:.9rem}
-footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem;text-align:center;border-top:1px solid var(--line)}
-@media (max-width:640px){
-  .hero{grid-template-columns:1fr;text-align:left}
-  .foto{order:-1;width:120px;height:120px;font-size:2.2rem}
-  header.nav nav{gap:12px;font-size:.85rem}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent)}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.saltar{position:absolute;left:12px;top:-60px;background:var(--accent);color:var(--on-accent);padding:10px 16px;border-radius:8px;z-index:100;font-weight:700}
+.saltar:focus{top:12px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:76px 0}
+.eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+h1,h2,h3{line-height:1.15;margin:0}
+h2{font-size:clamp(1.7rem,3.6vw,2.4rem);margin-bottom:12px}
+.lead{color:var(--muted);font-size:1.08rem;max-width:68ch;margin:0 0 36px}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font:inherit;font-weight:700;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{transform:translateY(-1px);text-decoration:none}
+.btn-pri{background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--on-accent);box-shadow:0 6px 20px rgba(56,189,248,.25)}
+:root[data-theme="light"] .btn-pri{color:#fff}
+.btn-sec{border-color:var(--accent);color:var(--accent);background:transparent}
+.btn-sec:hover{background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.btn-wa{background:#16a34a;color:#fff}
+.btn-wa:hover{background:#15803d}
+.btn-peq{padding:8px 16px;font-size:.92rem;border-radius:10px}
+
+/* Cabecera */
+header.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;height:64px}
+.marca{font-weight:800;text-decoration:none;color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
+.marca span{color:var(--accent)}
+nav.principal{margin-left:auto;display:flex;align-items:center;gap:4px}
+nav.principal a.enlace{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-size:.95rem;font-weight:600}
+nav.principal a.enlace:hover,nav.principal a.enlace[aria-current="true"]{color:var(--ink);background:var(--surface)}
+.tema,.menu-btn{background:transparent;border:1px solid var(--line);color:var(--ink);width:40px;height:40px;border-radius:10px;cursor:pointer;display:grid;place-items:center}
+.menu-btn{display:none}
+@media (max-width:860px){
+  .menu-btn{display:grid;margin-left:auto}
+  nav.principal{display:none;position:absolute;left:0;right:0;top:64px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;padding:12px 20px 18px;margin:0}
+  nav.principal.abierto{display:flex}
+  nav.principal a.enlace{padding:12px}
 }
+
+/* Portada */
+.hero{padding:72px 0 56px;position:relative;overflow:hidden;background:
+  radial-gradient(700px 360px at 85% -10%,color-mix(in srgb,var(--accent2) 28%,transparent),transparent 70%),
+  radial-gradient(600px 320px at 0% 10%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.1rem,5.2vw,3.5rem);letter-spacing:-.025em;margin:6px 0 18px}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{color:var(--muted);font-size:1.12rem;max-width:58ch;margin:0 0 26px}
+.cta-fila{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.audiencias{display:flex;flex-wrap:wrap;gap:10px;font-size:.95rem;color:var(--muted)}
+.audiencias a{font-weight:700}
+.retrato{justify-self:center;position:relative}
+.retrato img{width:min(300px,70vw);aspect-ratio:1;object-fit:cover;object-position:center 15%;border-radius:28px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.retrato::before{content:"";position:absolute;inset:-14px;border-radius:36px;background:linear-gradient(135deg,var(--accent),var(--accent2));opacity:.28;filter:blur(24px);z-index:-1}
+.etiqueta-flot{position:absolute;left:-12px;bottom:18px;background:var(--surface);border:1px solid var(--line);padding:8px 14px;border-radius:12px;box-shadow:var(--shadow);font-size:.85rem;font-weight:700}
+.etiqueta-flot small{display:block;color:var(--muted);font-weight:500}
+.cifras{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+.cifra{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.cifra b{display:block;font-size:1.7rem;line-height:1.1;color:var(--accent)}
+.cifra span{color:var(--muted);font-size:.92rem}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.retrato{order:-1}.cifras{grid-template-columns:1fr}}
+
+/* Tarjetas */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.rejilla{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cta-card{grid-column:span 2;display:flex;flex-direction:column;justify-content:center;gap:12px;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--surface)),color-mix(in srgb,var(--accent2) 16%,var(--surface)))}
+.cta-card h3{font-size:1.4rem}
+.cta-card p{margin:0;color:var(--muted)}
+.cta-card .btn{align-self:flex-start}
+@media (max-width:1000px){.rejilla{grid-template-columns:1fr 1fr}.cta-card{grid-column:auto}}
+@media (max-width:640px){.rejilla{grid-template-columns:1fr}}
+.servicio{display:flex;flex-direction:column;gap:12px;transition:border-color .2s,transform .2s}
+.servicio:hover{border-color:var(--accent);transform:translateY(-2px)}
+.servicio-cab{display:flex;justify-content:space-between;align-items:center}
+.icono{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent)}
+.estado{font-size:.76rem;font-weight:800;padding:4px 10px;border-radius:99px;border:1px solid currentColor}
+.estado-disponible{color:var(--ok)}
+.estado-proyecto{color:var(--accent)}
+.estado-consulta{color:var(--warn)}
+.servicio h3{font-size:1.15rem}
+.servicio p{margin:0;font-size:.96rem}
+.problema{color:var(--muted)}
+.beneficios{margin:0;padding-left:18px;font-size:.95rem}
+.beneficios li{margin:3px 0}
+.alcance{color:var(--muted);font-size:.9rem!important}
+.servicio .btn{margin-top:auto}
+.ev-bloque{margin:2px 0}
+.ev-etq{font-size:.74rem!important;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)!important;margin:0 0 6px!important}
+.tira{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.tira.dos{grid-template-columns:1fr 1fr}
+.tira.una{grid-template-columns:1fr}
+.mini-ev{position:relative;display:block;aspect-ratio:4/3;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--surface2)}
+.tira.una .mini-ev{aspect-ratio:16/9}
+.mini-ev img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .3s}
+.servicio:hover .mini-ev img{transform:scale(1.05)}
+.mas{position:absolute;inset:0;display:grid;place-items:center;background:rgba(5,10,20,.62);color:#fff;font-weight:800;font-size:1.1rem}
+.badge-ia{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.72);color:#fff;font-size:.7rem;padding:2px 9px;border-radius:99px;font-weight:700}
+.sin-fotos{border:1.5px dashed var(--line);border-radius:10px;padding:10px 12px;font-size:.84rem!important;color:var(--muted)!important}
+.leyenda{display:flex;flex-wrap:wrap;gap:18px;margin:-12px 0 28px;font-size:.9rem;color:var(--muted)}
+
+
+/* Tarjeta de servicio clicable + ventana de detalle */
+.servicio{position:relative;cursor:pointer}
+.abre{all:unset;display:block;cursor:pointer;font:inherit;font-weight:800;line-height:1.2}
+.abre::after{content:"";position:absolute;inset:0;z-index:1;border-radius:var(--radius)}
+.abre:focus-visible::after{outline:3px solid var(--accent);outline-offset:3px}
+.servicio .btn{position:relative;z-index:2}
+.ver{color:var(--accent);font-weight:700;font-size:.9rem!important;margin-top:auto!important}
+.servicio:hover .ver{text-decoration:underline}
+dialog#detalle{border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--ink);padding:0;width:min(920px,94vw);max-height:92vh;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+dialog#detalle::backdrop{background:rgba(5,10,20,.72);backdrop-filter:blur(3px)}
+.det-barra{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 16px;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.det-nav{display:flex;gap:8px}
+.det-btn{background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:8px 14px;font:inherit;font-weight:700;font-size:.9rem;cursor:pointer}
+.det-btn:hover{border-color:var(--accent);color:var(--accent)}
+.det-cerrar{width:42px;height:42px;padding:0;display:grid;place-items:center;font-size:1.3rem;line-height:1}
+#detalle-cuerpo{padding:22px 26px 28px}
+.det-cab{display:flex;gap:16px;align-items:center;margin-bottom:14px}
+.det-cab h3{font-size:1.5rem;margin-top:6px;outline:none}
+.ilus{margin:0 0 18px}
+.ilus img{width:100%;max-height:320px;object-fit:cover;object-position:center 30%;border-radius:14px;border:1px solid var(--line)}
+.ilus figcaption{font-size:.84rem;color:var(--muted);margin-top:6px}
+.det-ideal{background:var(--surface2);border-left:4px solid var(--accent);border-radius:10px;padding:12px 16px;margin:0 0 20px}
+.det-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:8px}
+#detalle section{padding:0}
+#detalle h4{font-size:.8rem;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin:18px 0 8px}
+#detalle ul{margin:0;padding-left:18px}
+#detalle li{margin:5px 0;font-size:.96rem}
+#detalle p{margin:0}
+.evid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;align-items:start}
+.evid figure,.evid .vid{margin:0}
+.evid img,.evid video{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1px solid var(--line);background:var(--surface2);display:block}
+.evid video{aspect-ratio:16/9}
+.evid img[style*="contain"],.mini-ev img[style*="contain"]{background:#0b1220}
+.evid figcaption{font-size:.84rem;color:var(--muted);margin-top:6px}
+.video-wrap{position:relative;aspect-ratio:16/9}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:12px}
+.sin-evid{border:2px dashed var(--line);border-radius:12px;padding:16px 18px;color:var(--muted);font-size:.95rem}
+.sin-evid b{color:var(--ink)}
+.enl-evid{margin-top:14px!important;font-weight:600}
+.det-acc{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+body.modal-open{overflow:hidden}
+@media (max-width:760px){.det-cols{grid-template-columns:1fr;gap:0}#detalle-cuerpo{padding:18px 18px 24px}.det-btn.txt{display:none}}
+
+/* Proyectos */
+.proyecto{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;margin-bottom:28px;align-items:start}
+.proyecto.inv{grid-template-columns:.9fr 1.1fr}
+.proyecto.inv .galeria{order:-1}
+.tipo{display:inline-block;font-size:.78rem;font-weight:800;padding:4px 12px;border-radius:99px;background:color-mix(in srgb,var(--accent2) 16%,transparent);color:var(--accent2);border:1px solid color-mix(in srgb,var(--accent2) 45%,transparent);margin-bottom:10px}
+.proyecto h3{font-size:1.5rem;margin-bottom:8px}
+.proyecto dl{margin:14px 0;display:grid;gap:10px}
+.proyecto dt{font-weight:800;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.proyecto dd{margin:2px 0 0;color:var(--ink);font-size:.97rem}
+.proyecto dd.m{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0;padding:0;list-style:none}
+.chips li{background:var(--surface2);border:1px solid var(--line);border-radius:99px;padding:3px 11px;font-size:.82rem;font-weight:600}
+.enlaces{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.galeria{display:grid;gap:10px;grid-template-columns:1fr 1fr;align-items:start}
+.galeria a{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--surface2)}
+.galeria a:first-child{grid-column:1/-1}
+.galeria img{width:100%;height:auto;transition:transform .3s}
+.galeria a:hover img{transform:scale(1.02)}
+.pie-gal{grid-column:1/-1;font-size:.82rem;color:var(--muted);margin:2px 0 0}
+.mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+@media (max-width:860px){.proyecto,.proyecto.inv{grid-template-columns:1fr}.proyecto.inv .galeria{order:0}}
+
+/* Proceso */
+.pasos{counter-reset:p;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none;padding:0;margin:0}
+@media (max-width:860px){.pasos{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.pasos{grid-template-columns:1fr}}
+.pasos li{counter-increment:p;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;position:relative}
+.pasos li::before{content:counter(p);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--on-accent);font-weight:800;margin-bottom:10px}
+:root[data-theme="light"] .pasos li::before{color:#fff}
+.pasos b{display:block;margin-bottom:4px}
+.pasos span{color:var(--muted);font-size:.94rem}
+
+/* Perfil */
+.fondo2{background:var(--bg2);border-block:1px solid var(--line)}
+.perfil-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:40px;align-items:start}
+.perfil-grid img{width:100%;max-width:280px;border-radius:24px;border:1px solid var(--line);aspect-ratio:1;object-fit:cover;object-position:center 15%}
+.perfil-grid p{margin:0 0 14px}
+.recluta{margin-top:20px;border-left:4px solid var(--accent);background:var(--surface);border-radius:12px;padding:18px 20px}
+.recluta h3{font-size:1.05rem;margin-bottom:6px}
+.recluta p{margin:0 0 12px;color:var(--muted);font-size:.96rem}
+.hechos{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;padding:0;list-style:none}
+.hechos li{background:var(--surface);border:1px solid var(--line);padding:6px 14px;border-radius:99px;font-size:.88rem;font-weight:600}
+@media (max-width:860px){.perfil-grid{grid-template-columns:1fr}}
+
+/* FAQ */
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0;margin-bottom:10px}
+summary{cursor:pointer;padding:16px 20px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--accent)}
+details[open] summary::after{content:"–"}
+details p{margin:0;padding:0 20px 18px;color:var(--muted)}
+
+/* Contacto */
+.contacto-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:28px;align-items:start}
+.canales{display:grid;gap:12px}
+.canal{display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.canal:hover{border-color:var(--accent)}
+.canal b{display:block}
+.canal span{color:var(--muted);font-size:.9rem;word-break:break-word}
+.canal .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);flex:none}
+form{display:grid;gap:14px}
+label{font-weight:700;font-size:.92rem;display:block;margin-bottom:5px}
+input,select,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface2);color:var(--ink);font:inherit}
+input:focus,select:focus,textarea:focus{outline:3px solid color-mix(in srgb,var(--accent) 55%,transparent);border-color:var(--accent)}
+textarea{min-height:130px;resize:vertical}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.err{color:#f87171;font-size:.86rem;margin-top:4px;min-height:1.1em}
+:root[data-theme="light"] .err{color:#b91c1c}
+.nota-form{font-size:.88rem;color:var(--muted);margin:0}
+.fila-env{display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:860px){.contacto-grid,.dos{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+.wa-flot{position:fixed;right:16px;bottom:16px;z-index:60;display:inline-flex;align-items:center;gap:8px;background:#16a34a;color:#fff;text-decoration:none;font-weight:800;padding:12px 18px;border-radius:99px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.wa-flot:hover{background:#15803d}
+@media (max-width:480px){.wa-flot span.t{display:none}.wa-flot{padding:14px}}
 </style>
 </head>
 <body>
-<header class="nav"><div class="wrap">
-  <b>Bayron Vásquez</b>
-  <nav><a href="#proyectos">Proyectos</a><a href="#habilidades">Habilidades</a><a href="#experiencia">Experiencia</a><a href="#formacion">Formación</a><a href="#contacto">Contacto</a></nav>
-</div></header>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
 
-<main>
-<div class="wrap hero">
-  <div>
-    <h1>Bayron de Jesús Vásquez Castillo</h1>
-    <p class="rol">Desarrollador de software · Python y Flask</p>
-    <p>Tecnólogo en Desarrollo de Sistemas de Información de Software, con base sólida en redes e infraestructura tras más de tres años en soporte técnico. Construyo aplicaciones web y de escritorio con bases de datos relacionales, pruebas automatizadas y despliegue propio.</p>
-    <div class="btns">
-      <a class="btn p" href="#contacto">Contáctame</a>
-      <a class="btn" href="Hoja_de_Vida_Bayron_Vasquez.pdf">Descargar hoja de vida</a>
+<header class="top">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="Bayron Vásquez, inicio">Bayron <span>Vásquez</span></a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="principal" id="nav" aria-label="Principal">
+      <a class="enlace" href="#servicios">Servicios</a>
+      <a class="enlace" href="#proyectos">Proyectos</a>
+      <a class="enlace" href="#proceso">Cómo trabajo</a>
+      <a class="enlace" href="#perfil">Perfil</a>
+      <a class="enlace" href="#preguntas">Preguntas</a>
+      <a class="btn btn-pri btn-peq" href="#contacto">Solicitar cotización</a>
+      <button class="tema" id="tema" type="button" aria-label="Cambiar entre tema claro y oscuro">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ============================ INICIO -->
+<section class="hero" id="inicio" aria-labelledby="titulo-inicio">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Profesional de tecnología · Cartagena, Colombia</span>
+        <h1 id="titulo-inicio">Tecnología que funciona, <em>explicada con claridad</em>.</h1>
+        <p class="sub">Soy Bayron Vásquez, tecnólogo en desarrollo de software y redes con más de 4 años de experiencia en soporte e infraestructura, entre trabajo independiente y como empleado. Ayudo a personas, emprendimientos y negocios a mantener sus equipos y su red funcionando, y a construir páginas web, aplicaciones y bases de datos a la medida.</p>
+        <div class="cta-fila">
+          <a class="btn btn-pri" href="#contacto">Solicitar cotización</a>
+          <a class="btn btn-sec" href="#proyectos">Ver proyectos reales</a>
+        </div>
+        <p class="audiencias">
+          <span>¿Necesitas un servicio? <a href="#servicios">Ver servicios</a></span>
+          <span aria-hidden="true">·</span>
+          <span>¿Buscas un profesional para tu equipo? <a href="#perfil">Ver mi perfil</a></span>
+        </p>
+      </div>
+      <div class="retrato">
+        <img src="img/foto.jpg" width="308" height="308" alt="Retrato de Bayron Vásquez">
+        <div class="etiqueta-flot">Python · Flask · SQL<small>Soporte · Redes · Desarrollo</small></div>
+      </div>
+    </div>
+    <div class="cifras" role="list" aria-label="Datos verificables">
+      <div class="cifra" role="listitem"><b>4+ años</b><span>de experiencia, entre trabajo independiente y como empleado</span></div>
+      <div class="cifra" role="listitem"><b>390+ pruebas</b><span>automatizadas en mi proyecto principal, con integración continua</span></div>
+      <div class="cifra" role="listitem"><b>2 aplicaciones</b><span>completas, publicadas en línea y con su código a la vista</span></div>
     </div>
   </div>
-  <!-- Pon tu foto en img/foto.jpg; si no existe se muestran las iniciales -->
-  <img class="foto" src="img/foto.jpg" alt="Foto de Bayron Vásquez" onerror="this.outerHTML='<div class=&quot;foto&quot;>BV</div>'">
-</div>
+</section>
 
-<section id="proyectos"><div class="wrap">
-  <h2>Proyectos</h2>
-  <div class="proj">
-
-    <article class="card">
-      <h3>RespiraKids — seguimiento de enfermedades respiratorias infantiles</h3>
-      <p class="sub">Proyecto de grado · Corporación Universitaria Rafael Núñez · 2026</p>
-      <p>Plataforma web para que cuidadores registren síntomas de niños y reciban una clasificación tipo semáforo (verde, amarillo, rojo) basada en reglas clínicas AIEPI, con un panel para profesionales de salud.</p>
-      <ul>
-        <li>Motor de reglas clínicas versionado (<code>v1-aiepi</code>) con validación de las reglas por un médico general en curso.</li>
-        <li>Roles (cuidador, profesional, administrador), autenticación, auditoría y gestión de privacidad.</li>
-        <li>Módulos de síntomas, medicamentos, mensajería, videollamadas y asistente con IA.</li>
-        <li>Modelo ML complementario (Random Forest) entrenado con datos <b>sintéticos</b>; no altera la clasificación clínica.</li>
-        <li>más de 390 pruebas automatizadas, integración continua con PostgreSQL y despliegue con Nginx, Gunicorn y systemd.</li>
-      </ul>
-      <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">SQLAlchemy</span><span class="chip">PostgreSQL / SQLite</span><span class="chip">scikit-learn</span><span class="chip">Nginx</span><span class="chip">CI</span></div>
-      <p class="nota">Proyecto académico. El modelo de aprendizaje automático es experimental y no se usa para decisiones de salud.</p>
-      <p>Desplegada en producción; se prepara una prueba con usuarios reales.</p>
-      <p><a href="https://respirakids.com">Ver en línea →</a> · <a href="https://github.com/jovenesdevanguardia/respirakids-app">Código y documentación en GitHub →</a></p>
-    </article>
-
-    <article class="card">
-      <h3>CEFAE Proyector — sistema de proyección para iglesias</h3>
-      <p class="sub">Producto de software con licencia · 2026</p>
-      <p>Panel de control y visor para proyectar Biblia, canciones, fondos y anuncios en una segunda pantalla, con atajos de teclado y funcionamiento sin internet.</p>
-      <ul>
-        <li>Actualización en tiempo real entre panel y visor con WebSockets.</li>
-        <li>Instalador para Windows, sistema de licencia con prueba de 30 días.</li>
-        <li>Página de producto publicada en GitHub Pages.</li>
-      </ul>
-      <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">Socket.IO</span><span class="chip">SQLite</span><span class="chip">JavaScript</span></div>
-      <p><a href="https://jovenesdevanguardia.github.io/cefae-proyector/">Ver sitio del producto →</a> · <a href="https://github.com/jovenesdevanguardia/cefae-proyector">Repositorio en GitHub →</a></p>
-    </article>
-
-    <article class="card">
-      <h3>Laboratorio de redes en EVE-NG</h3>
-      <p class="sub">Práctica de infraestructura</p>
-      <p>Topologías de red simuladas para practicar direccionamiento IP, enrutamiento y conmutación, con guía paso a paso documentada.</p>
-      <div class="chips"><span class="chip">EVE-NG</span><span class="chip">Cisco</span><span class="chip">LAN</span></div>
-    </article>
-
-  </div>
-</div></section>
-
-<section id="habilidades"><div class="wrap">
-  <h2>Habilidades técnicas</h2>
-  <div class="grid">
-    <div class="card"><h3>Desarrollo</h3><div class="chips"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">Flask</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">POO</span></div></div>
-    <div class="card"><h3>Bases de datos</h3><div class="chips"><span class="chip">SQL</span><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">SQLite</span><span class="chip">Modelado relacional</span></div></div>
-    <div class="card"><h3>Redes e infraestructura</h3><div class="chips"><span class="chip">LAN</span><span class="chip">Cableado estructurado</span><span class="chip">Cisco (CCNA intro)</span><span class="chip">Windows</span><span class="chip">Linux</span></div></div>
-    <div class="card"><h3>Prácticas</h3><div class="chips"><span class="chip">Pruebas automatizadas</span><span class="chip">Git</span><span class="chip">Documentación técnica</span><span class="chip">Despliegue</span></div></div>
-  </div>
-</div></section>
-
-<section id="experiencia"><div class="wrap">
-  <h2>Experiencia</h2>
-  <div class="tl">
-    <div class="it"><h3>Tecnólogo en Sistemas · R&amp;S Soluciones</h3><div class="sub">2024 – actualidad</div>Soporte técnico presencial y remoto, mantenimiento de equipos, redes LAN, inventario de activos e informes técnicos.</div>
-    <div class="it"><h3>Técnico en Sistemas · Dcaro Solution</h3><div class="sub">2023</div>Mantenimiento de servidores, equipos de escritorio y portátiles; instalación y configuración de sistemas y aplicaciones.</div>
-    <div class="it"><h3>Auxiliar de Sistemas · Universidad Jorge Tadeo Lozano</h3><div class="sub">jun 2022 – ene 2023</div>Soporte a usuarios administrativos y académicos; responsable del funcionamiento de software, hardware y redes.</div>
-  </div>
-</div></section>
-
-<section id="formacion"><div class="wrap">
-  <h2>Formación y certificaciones</h2>
-  <div class="grid">
-    <div class="card"><h3>Estudios</h3><ul>
-      <li>Tecnólogo en Desarrollo de Sistemas de Información de Software — Corporación Universitaria Rafael Núñez (2026)</li>
-      <li>Tecnólogo en Gestión de Redes de Datos — SENA (2022)</li>
-      <li>Técnico en Sistemas — SENA (2018)</li>
-      <li>Bachiller Técnico en Sistemas — I.E. Alberto Elías Fernández Baena (2018)</li></ul></div>
-    <div class="card"><h3>Cursos</h3><ul>
-      <li>Fundamentos de la ciberseguridad — Google / Coursera (2025) · <a href="https://coursera.org/verify/XP8VQHVY3C66">verificar</a></li>
-      <li>CCNA Routing and Switching: Introducción a redes — Cisco Networking Academy (2020)</li>
-      <li>Introducción al diseño de redes — SENA, 60 h (2020)</li>
-      <li>Fundamentos de redes de datos — SENA, 60 h (2020)</li>
-      <li>Administración de recursos humanos — SENA, 40 h (2020)</li></ul></div>
-  </div>
-</div></section>
-
-<section id="contacto"><div class="wrap">
-  <h2>Contacto</h2>
-  <div class="card">
-    <p>Cartagena de Indias, Colombia. Disponible para roles de desarrollo de software y proyectos web.</p>
-    <div class="btns">
-      <a class="btn p" href="mailto:bayronvasquezz.c@gmail.com">bayronvasquezz.c@gmail.com</a>
-      <a class="btn" href="https://wa.me/573225926739">WhatsApp</a>
-      <a class="btn" href="https://www.linkedin.com/in/bayron-de-jesus-vasquez-castillo-412749250/">LinkedIn</a>
+<!-- ============================ SERVICIOS -->
+<section id="servicios" aria-labelledby="titulo-servicios">
+  <div class="wrap">
+    <span class="eyebrow">Servicios</span>
+    <h2 id="titulo-servicios">Qué puedo hacer por tu negocio o tu equipo</h2>
+    <p class="lead">Soluciones para personas, emprendimientos y pequeños negocios. Sin tarifas de catálogo: cada trabajo se cotiza según su alcance, y el botón de cada servicio abre una conversación de WhatsApp con tu necesidad ya escrita. <strong>Toca una tarjeta para ver qué incluye, con qué la respaldo y las evidencias.</strong></p>
+    <p class="leyenda">
+      <span><b style="color:var(--ok)">● Disponible:</b> lo hago habitualmente</span>
+      <span><b style="color:var(--accent)">● Por proyecto:</b> se evalúa antes de cotizar</span>
+      <span><b style="color:var(--warn)">● Bajo consulta:</b> depende de tu caso</span>
+    </p>
+    <div class="rejilla">
+      <article class="card servicio" id="servicio-soporte">
+        <div class="servicio-cab">
+          <span class="icono"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3 17.7V21h3.3l6.3-6.3a4 4 0 0 0 5.1-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></span>
+          <span class="estado estado-disponible" title="Lo hago habitualmente y puedo cotizarlo ahora.">Disponible</span>
+        </div>
+        <h3><button type="button" class="abre" data-servicio="soporte" aria-haspopup="dialog">Soporte técnico y mantenimiento de computadores</button></h3>
+        <p class="problema"><strong>Resuelve:</strong> Equipos lentos, que no encienden, con virus o con fallas de hardware o software.</p>
+        <div class="ev-bloque"><span class="sr">Evidencias reales · 3</span><div class="tira "><span class="mini-ev"><img src="img/ilus-soporte.jpg" alt="" loading="lazy" style="object-position:50% 30%;object-fit:cover"></span><span class="mini-ev"><img src="img/soporte-diagnostico.svg" alt="" loading="lazy" style="object-position:center;object-fit:contain"></span><span class="mini-ev"><img src="img/soporte-mantenimiento.svg" alt="" loading="lazy" style="object-position:center;object-fit:contain"></span></div></div>
+        <ul class="beneficios"><li>Diagnóstico claro de qué falla y por qué</li><li>Mantenimiento preventivo y correctivo</li><li>Equipos de escritorio, portátiles e impresoras</li></ul>
+        <p class="alcance"><strong>Alcance:</strong> Diagnóstico, reparación de software, limpieza y mantenimiento. El cambio de piezas se cotiza aparte.</p>
+        <p class="ver" aria-hidden="true">Ver detalles y evidencias →</p>
+        <a class="btn btn-sec" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20cotizar%3A%20soporte%20t%C3%A9cnico%20o%20mantenimiento%20de%20un%20computador.%20Te%20cuento%20mi%20caso%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp<span class="sr"> — Soporte técnico y mantenimiento de computadores</span></a>
+      </article>
+      <article class="card servicio" id="servicio-sistemas">
+        <div class="servicio-cab">
+          <span class="icono"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>
+          <span class="estado estado-disponible" title="Lo hago habitualmente y puedo cotizarlo ahora.">Disponible</span>
+        </div>
+        <h3><button type="button" class="abre" data-servicio="sistemas" aria-haspopup="dialog">Instalación y configuración de sistemas operativos y programas</button></h3>
+        <p class="problema"><strong>Resuelve:</strong> Equipos nuevos o reformateados sin configurar, o programas que no instalan ni funcionan bien.</p>
+        <div class="ev-bloque"><span class="sr">Evidencias reales · 3</span><div class="tira "><span class="mini-ev"><img src="img/sistemas-instalacion-windows.jpg" alt="" loading="lazy" style="object-position:55% 62%;object-fit:cover"></span><span class="mini-ev"><img src="img/sistemas-instalacion.svg" alt="" loading="lazy" style="object-position:center;object-fit:contain"></span><span class="mini-ev"><img src="img/sistemas-programas.svg" alt="" loading="lazy" style="object-position:center;object-fit:contain"></span></div></div>
+        <ul class="beneficios"><li>Windows y Linux</li><li>Programas, controladores y periféricos instalados</li><li>Equipo listo para trabajar desde el primer día</li></ul>
+        <p class="alcance"><strong>Alcance:</strong> Instalación y configuración. Las licencias de software las aporta el cliente.</p>
+        <p class="ver" aria-hidden="true">Ver detalles y evidencias →</p>
+        <a class="btn btn-sec" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20cotizar%3A%20instalaci%C3%B3n%20o%20configuraci%C3%B3n%20de%20un%20sistema%20operativo%20o%20de%20programas.%20Te%20cuento%20mi%20caso%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp<span class="sr"> — Instalación y configuración de sistemas operativos y programas</span></a>
+      </article>
+      <article class="card servicio" id="servicio-redes">
+        <div class="servicio-cab">
+          <span class="icono"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v5M12 12l-6 5M12 12l6 5"/></svg></span>
+          <span class="estado estado-disponible" title="Lo hago habitualmente y puedo cotizarlo ahora.">Disponible</span>
+        </div>
+        <h3><button type="button" class="abre" data-servicio="redes" aria-haspopup="dialog">Redes, conectividad e infraestructura básica</button></h3>
+        <p class="problema"><strong>Resuelve:</strong> Internet intermitente, zonas sin señal o equipos que no se ven entre sí.</p>
+        <div class="ev-bloque"><span class="sr">Evidencias reales · 4</span><div class="tira "><span class="mini-ev"><img src="img/redes-antes.jpg" alt="" loading="lazy" style="object-position:center 38%;object-fit:cover"></span><span class="mini-ev"><img src="img/redes-despues.jpg" alt="" loading="lazy" style="object-position:center 38%;object-fit:cover"></span><span class="mini-ev"><img src="img/redes-topologia.svg" alt="" loading="lazy" style="object-position:center;object-fit:contain"><span class="mas">+1</span></span></div></div>
+        <ul class="beneficios"><li>Diagnóstico de problemas de conectividad</li><li>Configuración de redes LAN y Wi-Fi</li><li>Revisión y organización de cableado</li></ul>
+        <p class="alcance"><strong>Alcance:</strong> Redes de hogar, oficina o negocio pequeño y cableado estructurado básico. Proyectos grandes: previa evaluación.</p>
+        <p class="ver" aria-hidden="true">Ver detalles y evidencias →</p>
+        <a class="btn btn-sec" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20cotizar%3A%20redes%2C%20conectividad%20o%20infraestructura.%20Te%20cuento%20mi%20caso%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp<span class="sr"> — Redes, conectividad e infraestructura básica</span></a>
+      </article>
+      <article class="card servicio" id="servicio-web">
+        <div class="servicio-cab">
+          <span class="icono"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+          <span class="estado estado-proyecto" title="Se cotiza tras evaluar la necesidad.">Por proyecto</span>
+        </div>
+        <h3><button type="button" class="abre" data-servicio="web" aria-haspopup="dialog">Páginas web y aplicaciones web</button></h3>
+        <p class="problema"><strong>Resuelve:</strong> Un negocio sin presencia en línea, o con procesos que dependen de papel y hojas de cálculo.</p>
+        <div class="ev-bloque"><span class="sr">Evidencias reales · 6</span><div class="tira "><span class="mini-ev"><img src="img/cuidador-inicio.jpg" alt="" loading="lazy" style="object-position:top;object-fit:cover"></span><span class="mini-ev"><img src="img/cuidador-celular.jpg" alt="" loading="lazy" style="object-position:top;object-fit:cover"></span><span class="mini-ev"><img src="img/cefae-panel.jpg" alt="" loading="lazy" style="object-position:top;object-fit:contain"><span class="mas">+3</span></span></div></div>
+        <ul class="beneficios"><li>Página o aplicación hecha a la medida</li><li>Adaptada a celular y computador</li><li>Publicada y funcionando, con explicación de cómo usarla</li></ul>
+        <p class="alcance"><strong>Alcance:</strong> Se define y se cotiza después de conocer la necesidad. Ejemplos reales: RespiraKids y CEFAE Proyector.</p>
+        <p class="ver" aria-hidden="true">Ver detalles y evidencias →</p>
+        <a class="btn btn-sec" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20cotizar%3A%20una%20p%C3%A1gina%20web%20o%20aplicaci%C3%B3n%20web.%20Te%20cuento%20mi%20caso%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp<span class="sr"> — Páginas web y aplicaciones web</span></a>
+      </article>
+      <article class="card servicio" id="servicio-software">
+        <div class="servicio-cab">
+          <span class="icono"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span>
+          <span class="estado estado-proyecto" title="Se cotiza tras evaluar la necesidad.">Por proyecto</span>
+        </div>
+        <h3><button type="button" class="abre" data-servicio="software" aria-haspopup="dialog">Desarrollo de software y funcionalidades personalizadas</button></h3>
+        <p class="problema"><strong>Resuelve:</strong> Procesos repetitivos, información dispersa o necesidades que ninguna aplicación comercial cubre.</p>
+        <div class="ev-bloque"><span class="sr">Evidencias reales · 4</span><div class="tira "><span class="mini-ev"><img src="img/profesional-semaforo.jpg" alt="" loading="lazy" style="object-position:top;object-fit:cover"></span><span class="mini-ev"><img src="img/resultado-evaluacion.jpg" alt="" loading="lazy" style="object-position:top;object-fit:cover"></span><span class="mini-ev"><img src="img/software-codigo.svg" alt="" loading="lazy" style="object-position:center;object-fit:contain"><span class="mas">+1</span></span></div></div>
+        <ul class="beneficios"><li>Sistemas para administrar información</li><li>Automatización de tareas repetitivas</li><li>Código con pruebas automatizadas</li></ul>
+        <p class="alcance"><strong>Alcance:</strong> Desarrollos pequeños y medianos, por fases, con una evaluación previa del alcance.</p>
+        <p class="ver" aria-hidden="true">Ver detalles y evidencias →</p>
+        <a class="btn btn-sec" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20cotizar%3A%20desarrollo%20de%20software%20o%20una%20funcionalidad%20personalizada.%20Te%20cuento%20mi%20caso%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp<span class="sr"> — Desarrollo de software y funcionalidades personalizadas</span></a>
+      </article>
+      <article class="card servicio" id="servicio-datos">
+        <div class="servicio-cab">
+          <span class="icono"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span>
+          <span class="estado estado-disponible" title="Lo hago habitualmente y puedo cotizarlo ahora.">Disponible</span>
+        </div>
+        <h3><button type="button" class="abre" data-servicio="datos" aria-haspopup="dialog">Bases de datos, consultas SQL y gestión de información</button></h3>
+        <p class="problema"><strong>Resuelve:</strong> Información en muchos archivos, difícil de consultar, de mantener o de convertir en reportes.</p>
+        <div class="ev-bloque"><span class="sr">Evidencias reales · 3</span><div class="tira "><span class="mini-ev"><img src="img/profesional-expediente.jpg" alt="" loading="lazy" style="object-position:top;object-fit:cover"></span><span class="mini-ev"><img src="img/datos-tablas.svg" alt="" loading="lazy" style="object-position:center;object-fit:contain"></span><span class="mini-ev"><img src="img/datos-reportes.svg" alt="" loading="lazy" style="object-position:center;object-fit:contain"></span></div></div>
+        <ul class="beneficios"><li>Diseño y modelado de la base de datos</li><li>Consultas SQL y reportes</li><li>Información organizada y ordenada</li></ul>
+        <p class="alcance"><strong>Alcance:</strong> PostgreSQL, MySQL y SQLite. Revisión de lo que ya existe o diseño desde cero.</p>
+        <p class="ver" aria-hidden="true">Ver detalles y evidencias →</p>
+        <a class="btn btn-sec" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20cotizar%3A%20una%20base%20de%20datos%2C%20consultas%20SQL%20o%20gesti%C3%B3n%20de%20informaci%C3%B3n.%20Te%20cuento%20mi%20caso%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp<span class="sr"> — Bases de datos, consultas SQL y gestión de información</span></a>
+      </article>
+      <article class="card servicio" id="servicio-asesoria">
+        <div class="servicio-cab">
+          <span class="icono"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span>
+          <span class="estado estado-consulta" title="Cuéntame tu caso y confirmo si puedo ayudarte.">Bajo consulta</span>
+        </div>
+        <h3><button type="button" class="abre" data-servicio="asesoria" aria-haspopup="dialog">Asesoría y acompañamiento tecnológico</button></h3>
+        <p class="problema"><strong>Resuelve:</strong> No saber qué tecnología necesitas, cómo organizar tus equipos o por dónde empezar a digitalizar.</p>
+        <div class="ev-bloque"><span class="sr">Evidencias reales · 2</span><div class="tira dos"><span class="mini-ev"><img src="img/asesoria-conversacion.svg" alt="" loading="lazy" style="object-position:center;object-fit:contain"></span><span class="mini-ev"><img src="img/asesoria-ruta.svg" alt="" loading="lazy" style="object-position:center;object-fit:contain"></span></div></div>
+        <ul class="beneficios"><li>Recomendaciones según tu necesidad y presupuesto</li><li>Acompañamiento en decisiones técnicas</li><li>Lenguaje claro, sin tecnicismos innecesarios</li></ul>
+        <p class="alcance"><strong>Alcance:</strong> Se acuerda según el caso. Escríbeme y vemos si puedo ayudarte o a quién acudir.</p>
+        <p class="ver" aria-hidden="true">Ver detalles y evidencias →</p>
+        <a class="btn btn-sec" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20cotizar%3A%20asesor%C3%ADa%20o%20acompa%C3%B1amiento%20tecnol%C3%B3gico.%20Te%20cuento%20mi%20caso%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp<span class="sr"> — Asesoría y acompañamiento tecnológico</span></a>
+      </article>
+      <aside class="card cta-card" aria-label="¿No ves lo que necesitas?">
+        <h3>¿No ves lo que necesitas?</h3>
+        <p>Muchos problemas tecnológicos no encajan en una lista. Cuéntame tu caso y te digo con honestidad si puedo ayudarte o a quién acudir.</p>
+        <a class="btn btn-pri" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20solicitar%20una%20cotizaci%C3%B3n.%20Te%20cuento%20lo%20que%20necesito%3A%20" target="_blank" rel="noopener">Cuéntame tu caso</a>
+      </aside>
     </div>
   </div>
-</div></section>
+</section>
+
+<!-- ============================ PROYECTOS -->
+<section class="fondo2" id="proyectos" aria-labelledby="titulo-proyectos">
+  <div class="wrap">
+    <span class="eyebrow">Proyectos</span>
+    <h2 id="titulo-proyectos">Evidencia: lo que ya construí</h2>
+    <p class="lead">Estos proyectos muestran cómo trabajo. RespiraKids es un proyecto académico y CEFAE un producto propio: no son trabajos contratados. Cada uno se identifica por su naturaleza real y todo lo que se muestra se puede verificar.</p>
+
+    <article class="card proyecto" aria-labelledby="p-respira">
+      <div>
+        <span class="tipo">Proyecto académico · demostración técnica en línea</span>
+        <h3 id="p-respira">RespiraKids</h3>
+        <p>Plataforma web para el seguimiento de enfermedades respiratorias en niños menores de 5 años: los cuidadores registran síntomas y reciben un semáforo de riesgo; los profesionales ven la evolución de los niños que les autorizan.</p>
+        <dl>
+          <div><dt>Problema que resuelve</dt><dd>Un cuidador no sabe si el cuadro de su hijo es de observación o de consulta, y el profesional no tiene la evolución ordenada.</dd></div>
+          <div><dt>Mi participación</dt><dd>Diseñé y programé la aplicación completa: backend, base de datos, interfaz, pruebas y despliegue (proyecto de grado, 2026).</dd></div>
+          <div><dt>Decisiones técnicas</dt><dd class="m">La clasificación la deciden reglas clínicas versionadas (AIEPI, MinSalud) y no un modelo de aprendizaje automático, que solo apoya al profesional y se entrenó con datos sintéticos. Cada evaluación guarda qué versión de reglas la produjo. Acceso por niño, consentimiento y auditoría de datos de menores.</dd></div>
+          <div><dt>Funcionalidades</dt><dd>Semáforo de riesgo con fuente clínica, historial y gráficos, mensajes y videollamada, medicamentos, asistente con IA, panel profesional y administración.</dd></div>
+          <div><dt>Calidad</dt><dd>Más de 390 pruebas automatizadas, integración continua sobre PostgreSQL, despliegue con Nginx y Gunicorn. Está en línea y se prepara una prueba con usuarios reales.</dd></div>
+          <div><dt>Tecnologías</dt><dd><ul class="chips"><li>Python</li><li>Flask</li><li>PostgreSQL</li><li>SQLAlchemy</li><li>scikit-learn</li><li>Nginx</li><li>GitHub Actions</li></ul></dd></div>
+        </dl>
+        <div class="enlaces">
+          <a class="btn btn-pri btn-peq" href="https://respirakids.com" target="_blank" rel="noopener">Ver en línea</a>
+          <a class="btn btn-sec btn-peq" href="https://github.com/jovenesdevanguardia/respirakids-app" target="_blank" rel="noopener">Código y documentación</a>
+        </div>
+      </div>
+      <div class="galeria">
+        <a href="img/cuidador-inicio.jpg" target="_blank" rel="noopener"><img src="img/cuidador-inicio.jpg" width="1280" height="1248" loading="lazy" alt="Panel del cuidador con el semáforo de riesgo de cada niño"></a>
+        <a href="img/resultado-evaluacion.jpg" target="_blank" rel="noopener"><img src="img/resultado-evaluacion.jpg" width="1280" height="1492" loading="lazy" alt="Resultado de una evaluación con señales y fuente clínica"></a>
+        <a href="img/profesional-expediente.jpg" target="_blank" rel="noopener"><img src="img/profesional-expediente.jpg" width="1280" height="1517" loading="lazy" alt="Expediente del profesional con gráfico de evolución"></a>
+        <p class="pie-gal">Capturas con datos ficticios. Toca una imagen para verla completa.</p>
+      </div>
+    </article>
+
+    <article class="card proyecto inv" aria-labelledby="p-cefae">
+      <div>
+        <span class="tipo">Producto propio · publicado</span>
+        <h3 id="p-cefae">CEFAE Proyector</h3>
+        <p>Sistema de proyección para iglesias: Biblia, canciones, videos, imágenes y anuncios en el televisor o videobeam desde un panel de control.</p>
+        <dl>
+          <div><dt>Problema que resuelve</dt><dd>Las iglesias necesitan proyectar versículos y canciones en vivo sin depender de presentaciones armadas a mano.</dd></div>
+          <div><dt>Mi participación</dt><dd>Desarrollo completo: panel, visor en segunda pantalla, instalador para Windows y sistema de licencia.</dd></div>
+          <div><dt>Decisiones técnicas</dt><dd class="m">Funciona sin internet y solo acepta conexiones del propio equipo por defecto. Panel y visor se sincronizan en tiempo real con WebSockets.</dd></div>
+          <div><dt>Estado</dt><dd>Publicado, con prueba gratis de 30 días, y en etapa de difusión. Aún no tiene clientes que pueda citar.</dd></div>
+          <div><dt>Tecnologías</dt><dd><ul class="chips"><li>Python</li><li>Flask</li><li>Socket.IO</li><li>SQLite</li><li>JavaScript</li></ul></dd></div>
+        </dl>
+        <div class="enlaces">
+          <a class="btn btn-pri btn-peq" href="https://jovenesdevanguardia.github.io/cefae-proyector/" target="_blank" rel="noopener">Ver el producto</a>
+          <a class="btn btn-sec btn-peq" href="https://github.com/jovenesdevanguardia/cefae-proyector" target="_blank" rel="noopener">Repositorio</a>
+        </div>
+      </div>
+      <div class="galeria">
+        <a href="img/cefae-panel.jpg" target="_blank" rel="noopener"><img src="img/cefae-panel.jpg" width="1400" height="787" loading="lazy" alt="Panel de control de CEFAE con el buscador de la Biblia y la vista previa"></a>
+        <a href="img/cefae-visor.jpg" target="_blank" rel="noopener"><img src="img/cefae-visor.jpg" width="1000" height="562" loading="lazy" alt="Pantalla del visor proyectando un versículo"></a>
+        <a href="img/cefae-celular.jpg" target="_blank" rel="noopener"><img src="img/cefae-celular.jpg" width="700" height="1514" loading="lazy" alt="Control de CEFAE desde un celular"></a>
+      </div>
+    </article>
+
+    <div class="mini">
+      <article class="card">
+        <span class="tipo">Práctica técnica</span>
+        <h3>Laboratorio de redes en EVE-NG</h3>
+        <p>Topologías simuladas para practicar direccionamiento IP, enrutamiento y conmutación, con una guía paso a paso documentada. Respalda mis servicios de redes y es práctica de laboratorio, no un trabajo para un cliente.</p>
+        <ul class="chips"><li>EVE-NG</li><li>Cisco</li><li>LAN</li></ul>
+      </article>
+      <article class="card">
+        <span class="tipo">Trabajos para clientes</span>
+        <h3>Clientes y referencias</h3>
+        <p>He atendido clientes como trabajador independiente y como empleado en empresas e instituciones. Aquí publico solo lo que tengo permiso de mostrar, como las fotos del rack en la ficha de Redes. Si necesitas referencias o casos concretos, pídemelos.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PROCESO -->
+<section id="proceso" aria-labelledby="titulo-proceso">
+  <div class="wrap">
+    <span class="eyebrow">Cómo trabajo</span>
+    <h2 id="titulo-proceso">Un proceso simple y sin sorpresas</h2>
+    <p class="lead">Quiero que sepas qué se va a hacer, cuánto cuesta y cuándo termina antes de empezar.</p>
+    <ol class="pasos">
+      <li><b>Conversamos</b><span>Me cuentas qué necesitas y qué problema quieres resolver.</span></li>
+      <li><b>Diagnóstico</b><span>Reviso el caso y confirmo qué se puede hacer y qué no.</span></li>
+      <li><b>Propuesta</b><span>Recibes el alcance, los tiempos y la cotización por escrito.</span></li>
+      <li><b>Aprobación</b><span>Empiezo solo cuando estás de acuerdo con la propuesta.</span></li>
+      <li><b>Ejecución</b><span>Hago el trabajo y te voy informando los avances.</span></li>
+      <li><b>Entrega</b><span>Te explico lo que hice y cómo usarlo o mantenerlo.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================ PERFIL -->
+<section class="fondo2" id="perfil" aria-labelledby="titulo-perfil">
+  <div class="wrap">
+    <span class="eyebrow">Perfil</span>
+    <h2 id="titulo-perfil">Quién está detrás</h2>
+    <div class="perfil-grid">
+      <img src="img/foto.jpg" width="308" height="308" loading="lazy" alt="Bayron Vásquez">
+      <div>
+        <ul class="hechos">
+          <li>Cartagena, Colombia</li><li>Tecnólogo en Desarrollo de Software</li><li>Tecnólogo en Redes de Datos</li><li>Técnico en Sistemas</li>
+        </ul>
+        <p>Empecé en el soporte técnico y la infraestructura —equipos, redes y usuarios reales con problemas reales— y de ahí pasé a construir software. Esa mezcla es lo que me permite entender tanto la falla en el computador como el sistema que la origina.</p>
+        <p>Trabajo con Python, Flask y bases de datos relacionales, con pruebas y despliegue propios. Mi formación incluye certificaciones de redes y ciberseguridad (Cisco, Google). Mi inglés es básico, así que me comunico en español.</p>
+        <p><a href="https://www.linkedin.com/in/bayron-de-jesus-vasquez-castillo-412749250/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/jovenesdevanguardia" target="_blank" rel="noopener">GitHub</a></p>
+        <div class="recluta">
+          <h3>¿Buscas incorporar un desarrollador?</h3>
+          <p>Busco mi primer rol como desarrollador backend o web junior en Python. Mis proyectos están arriba, con código y documentación; el resto lo cuento mejor en una conversación.</p>
+          <div class="enlaces">
+            <a class="btn btn-pri btn-peq" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20portafolio%20y%20quiero%20conversar%20sobre%20una%20oportunidad%20laboral." target="_blank" rel="noopener">Conversar por WhatsApp</a>
+            <a class="btn btn-sec btn-peq" href="Hoja_de_Vida_Bayron_Vasquez.pdf">Hoja de vida (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ -->
+<section id="preguntas" aria-labelledby="titulo-preguntas">
+  <div class="wrap">
+    <span class="eyebrow">Preguntas frecuentes</span>
+    <h2 id="titulo-preguntas">Antes de escribirme</h2>
+    <details><summary>¿Cuánto cuesta?</summary><p>Cada trabajo se cotiza según su alcance. No publico tarifas fijas: cuéntame qué necesitas y te respondo con una propuesta por escrito.</p></details>
+    <details><summary>¿Atiendes en sitio o a distancia?</summary><p>Estoy en Cartagena, Colombia. Según el servicio atiendo en sitio o a distancia; lo definimos al cotizar.</p></details>
+    <details><summary>¿Ya has trabajado con clientes?</summary><p>Sí. Llevo más de 4 años de experiencia en soporte e infraestructura, combinando trabajo como independiente y como empleado en empresas e instituciones. Los casos concretos los comparto como referencias; en este sitio muestro mis proyectos y las fotos de los trabajos que tengo permiso de publicar.</p></details>
+    <details><summary>¿Puedo ver cómo trabajas antes de contratar?</summary><p>Sí. RespiraKids y CEFAE Proyector están en línea y su código está en GitHub, con documentación y pruebas.</p></details>
+    <details><summary>¿Qué pasa con los datos que escribo en el formulario?</summary><p>No se guardan en este sitio. El formulario arma el mensaje y abre WhatsApp o tu correo con el texto ya redactado; solo se envía cuando tú pulsas enviar allí.</p></details>
+    <details><summary>Soy reclutador. ¿Cómo te contacto?</summary><p>Por <a href="https://www.linkedin.com/in/bayron-de-jesus-vasquez-castillo-412749250/" target="_blank" rel="noopener">LinkedIn</a>, por correo a <a href="mailto:bayronvasquezz.c@gmail.com">bayronvasquezz.c@gmail.com</a> o por WhatsApp. Mi hoja de vida está en la sección de perfil.</p></details>
+  </div>
+</section>
+
+<!-- ============================ CONTACTO -->
+<section class="fondo2" id="contacto" aria-labelledby="titulo-contacto">
+  <div class="wrap">
+    <span class="eyebrow">Contacto</span>
+    <h2 id="titulo-contacto">Cuéntame qué necesitas</h2>
+    <p class="lead">Te respondo por el medio que prefieras. Para una cotización, entre más detalles me des, más precisa será.</p>
+    <div class="contacto-grid">
+      <div class="canales">
+        <a class="canal" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20solicitar%20una%20cotizaci%C3%B3n.%20Te%20cuento%20lo%20que%20necesito%3A%20" target="_blank" rel="noopener">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"/></svg></span>
+          <span><b>WhatsApp</b><span>+57 322 592 6739</span></span>
+        </a>
+        <a class="canal" href="mailto:bayronvasquezz.c@gmail.com">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <span><b>Correo</b><span>bayronvasquezz.c@gmail.com</span></span>
+        </a>
+        <a class="canal" href="https://www.linkedin.com/in/bayron-de-jesus-vasquez-castillo-412749250/" target="_blank" rel="noopener">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v6M8 7.5v.01M12 17v-6M12 13a3 3 0 0 1 6 0v4"/></svg></span>
+          <span><b>LinkedIn</b><span>Perfil profesional</span></span>
+        </a>
+        <a class="canal" href="https://github.com/jovenesdevanguardia" target="_blank" rel="noopener">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3.1-.3 6.4-1.5 6.4-7a5.4 5.4 0 0 0-1.5-3.7 5 5 0 0 0-.1-3.7s-1.2-.3-3.9 1.5a13.4 13.4 0 0 0-7 0C6.1 2.4 4.9 2.7 4.9 2.7a5 5 0 0 0-.1 3.7 5.4 5.4 0 0 0-1.5 3.7c0 5.5 3.3 6.7 6.4 7a3.4 3.4 0 0 0-.9 2.6V22"/></svg></span>
+          <span><b>GitHub</b><span>Código de mis proyectos</span></span>
+        </a>
+      </div>
+
+      <form id="form" novalidate aria-labelledby="titulo-form">
+        <h3 id="titulo-form" class="sr">Formulario de contacto</h3>
+        <div class="dos">
+          <div>
+            <label for="f-nombre">Tu nombre *</label>
+            <input id="f-nombre" name="nombre" autocomplete="name" required aria-describedby="e-nombre">
+            <div class="err" id="e-nombre" aria-live="polite"></div>
+          </div>
+          <div>
+            <label for="f-motivo">Motivo</label>
+            <select id="f-motivo" name="motivo">
+              <option>Cotizar un servicio</option>
+              <option>Oportunidad laboral</option>
+              <option>Otra consulta</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="f-servicio">Servicio de interés (opcional)</label>
+          <select id="f-servicio" name="servicio">
+            <option value="">Aún no lo sé / otro</option>
+            <option value="soporte técnico o mantenimiento de un computador">Soporte técnico y mantenimiento de computadores</option><option value="instalación o configuración de un sistema operativo o de programas">Instalación y configuración de sistemas operativos y programas</option><option value="redes, conectividad o infraestructura">Redes, conectividad e infraestructura básica</option><option value="una página web o aplicación web">Páginas web y aplicaciones web</option><option value="desarrollo de software o una funcionalidad personalizada">Desarrollo de software y funcionalidades personalizadas</option><option value="una base de datos, consultas SQL o gestión de información">Bases de datos, consultas SQL y gestión de información</option><option value="asesoría o acompañamiento tecnológico">Asesoría y acompañamiento tecnológico</option>
+          </select>
+        </div>
+        <div>
+          <label for="f-contacto">Cómo te respondo (teléfono o correo, opcional)</label>
+          <input id="f-contacto" name="contacto" autocomplete="email">
+        </div>
+        <div>
+          <label for="f-mensaje">Cuéntame qué necesitas *</label>
+          <textarea id="f-mensaje" name="mensaje" required aria-describedby="e-mensaje"></textarea>
+          <div class="err" id="e-mensaje" aria-live="polite"></div>
+        </div>
+        <div class="fila-env">
+          <button class="btn btn-wa" type="submit" data-via="wa">Continuar en WhatsApp</button>
+          <button class="btn btn-sec" type="submit" data-via="correo">Continuar por correo</button>
+        </div>
+        <p class="nota-form">Este formulario no guarda ni envía datos por sí solo: arma tu mensaje y abre WhatsApp o tu correo para que lo envíes tú.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<footer><div class="wrap">© 2026 Bayron de Jesús Vásquez Castillo</div></footer>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Bayron de Jesús Vásquez Castillo · Cartagena, Colombia</span>
+    <span><a href="#inicio">Volver arriba</a></span>
+  </div>
+</footer>
+
+<a class="wa-flot" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20solicitar%20una%20cotizaci%C3%B3n.%20Te%20cuento%20lo%20que%20necesito%3A%20" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"/></svg>
+  <span class="t">WhatsApp</span>
+</a>
+
+
+<dialog id="detalle" aria-labelledby="det-titulo">
+  <div class="det-barra">
+    <div class="det-nav">
+      <button type="button" class="det-btn" id="det-ant" aria-label="Servicio anterior">← <span class="txt det-btn-t">Anterior</span></button>
+      <button type="button" class="det-btn" id="det-sig" aria-label="Servicio siguiente"><span class="txt det-btn-t">Siguiente</span> →</button>
+    </div>
+    <button type="button" class="det-btn det-cerrar" id="det-cerrar" aria-label="Cerrar detalle">✕</button>
+  </div>
+  <div id="detalle-cuerpo"></div>
+</dialog>
+
+<template id="detalle-soporte">
+  <header class="det-cab">
+    <span class="icono"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3 17.7V21h3.3l6.3-6.3a4 4 0 0 0 5.1-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></span>
+    <div>
+      <span class="estado estado-disponible">Disponible</span>
+      <h3 id="det-titulo" tabindex="-1">Soporte técnico y mantenimiento de computadores</h3>
+    </div>
+  </header>
+  <p class="det-ideal"><b>Ideal si:</b> Tu computador o impresora falla, está lento o necesitas dejarlo funcionando sin perder tiempo.</p>
+  <div class="det-cols">
+    <section aria-labelledby="det-inc"><h4 id="det-inc">Qué incluye</h4><ul><li>Revisión del estado del equipo y de los síntomas</li><li>Diagnóstico de fallas de hardware y software</li><li>Mantenimiento preventivo y correctivo</li><li>Un informe corto de lo encontrado y lo que se hizo</li></ul>
+      <h4>Alcance</h4><p>Diagnóstico, reparación de software, limpieza y mantenimiento. El cambio de piezas se cotiza aparte.</p></section>
+    <section aria-labelledby="det-resp"><h4 id="det-resp">Con qué lo respaldo</h4><ul><li>Auxiliar de Sistemas, Universidad Jorge Tadeo Lozano (jun 2022 – ene 2023): soporte a usuarios administrativos y académicos.</li><li>Técnico en Sistemas, Dcaro Solutions (2023): mantenimiento de servidores, equipos de escritorio y portátiles.</li><li>Tecnólogo en Sistemas, R&amp;S Soluciones (desde mar 2024): soporte presencial y remoto, instalación y configuración, redes LAN.</li><li>Elaboración de informes técnicos de diagnóstico y soluciones aplicadas.</li></ul></section>
+  </div>
+  <section aria-labelledby="det-evid"><h4 id="det-evid">Imágenes</h4><div class="evid"><figure><a href="img/ilus-soporte.jpg" target="_blank" rel="noopener"><img src="img/ilus-soporte.jpg" width="1000" height="1075" loading="lazy" alt="Técnico revisando el interior de un computador de escritorio" style="object-position:50% 30%;object-fit:cover"></a><figcaption>Revisión del interior de un equipo</figcaption></figure><figure><a href="img/soporte-diagnostico.svg" target="_blank" rel="noopener"><img src="img/soporte-diagnostico.svg" width="640" height="420" loading="lazy" alt="Ilustración: un portátil con una lupa y una marca de revisión" style="object-position:center;object-fit:contain"></a><figcaption>Diagnóstico claro de la falla</figcaption></figure><figure><a href="img/soporte-mantenimiento.svg" target="_blank" rel="noopener"><img src="img/soporte-mantenimiento.svg" width="640" height="420" loading="lazy" alt="Ilustración: un computador abierto con una lista de pasos revisados" style="object-position:center;object-fit:contain"></a><figcaption>Mantenimiento preventivo y correctivo</figcaption></figure></div></section>
+  <div class="det-acc">
+    <a class="btn btn-wa" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20cotizar%3A%20soporte%20t%C3%A9cnico%20o%20mantenimiento%20de%20un%20computador.%20Te%20cuento%20mi%20caso%3A%20" target="_blank" rel="noopener">Cotizar este servicio por WhatsApp</a>
+    <a class="btn btn-sec" href="#contacto" data-cerrar>Escribirme desde el formulario</a>
+  </div>
+</template>
+<template id="detalle-sistemas">
+  <header class="det-cab">
+    <span class="icono"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>
+    <div>
+      <span class="estado estado-disponible">Disponible</span>
+      <h3 id="det-titulo" tabindex="-1">Instalación y configuración de sistemas operativos y programas</h3>
+    </div>
+  </header>
+  <p class="det-ideal"><b>Ideal si:</b> Compraste un equipo nuevo, necesitas reinstalar el sistema o un programa no funciona como debe.</p>
+  <div class="det-cols">
+    <section aria-labelledby="det-inc"><h4 id="det-inc">Qué incluye</h4><ul><li>Instalación de Windows o Linux</li><li>Controladores, programas y periféricos</li><li>Configuración inicial para que el equipo quede listo para usar</li><li>Actualización de sistema, aplicaciones y controladores</li></ul>
+      <h4>Alcance</h4><p>Instalación y configuración. Las licencias de software las aporta el cliente.</p></section>
+    <section aria-labelledby="det-resp"><h4 id="det-resp">Con qué lo respaldo</h4><ul><li>Auxiliar de Sistemas, Universidad Jorge Tadeo Lozano (jun 2022 – ene 2023): soporte a usuarios administrativos y académicos.</li><li>Técnico en Sistemas, Dcaro Solutions (2023): mantenimiento de servidores, equipos de escritorio y portátiles.</li><li>Tecnólogo en Sistemas, R&amp;S Soluciones (desde mar 2024): soporte presencial y remoto, instalación y configuración, redes LAN.</li><li>Funciones documentadas en mi hoja de vida: instalar, configurar y actualizar sistemas operativos, aplicaciones y controladores.</li></ul></section>
+  </div>
+  <section aria-labelledby="det-evid"><h4 id="det-evid">Imágenes</h4><div class="evid"><figure><a href="img/sistemas-instalacion-windows.jpg" target="_blank" rel="noopener"><img src="img/sistemas-instalacion-windows.jpg" width="1000" height="1000" loading="lazy" alt="Instalación de Windows en un portátil: pantalla de selección de idioma del programa de instalación" style="object-position:55% 62%;object-fit:cover"></a><figcaption>Instalación de Windows en un portátil</figcaption></figure><figure><a href="img/sistemas-instalacion.svg" target="_blank" rel="noopener"><img src="img/sistemas-instalacion.svg" width="640" height="420" loading="lazy" alt="Ilustración: una ventana con una barra de progreso de instalación" style="object-position:center;object-fit:contain"></a><figcaption>Instalación de Windows o Linux</figcaption></figure><figure><a href="img/sistemas-programas.svg" target="_blank" rel="noopener"><img src="img/sistemas-programas.svg" width="640" height="420" loading="lazy" alt="Ilustración: una cuadrícula de programas instalados y listos" style="object-position:center;object-fit:contain"></a><figcaption>Programas, controladores y periféricos</figcaption></figure></div></section>
+  <div class="det-acc">
+    <a class="btn btn-wa" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20cotizar%3A%20instalaci%C3%B3n%20o%20configuraci%C3%B3n%20de%20un%20sistema%20operativo%20o%20de%20programas.%20Te%20cuento%20mi%20caso%3A%20" target="_blank" rel="noopener">Cotizar este servicio por WhatsApp</a>
+    <a class="btn btn-sec" href="#contacto" data-cerrar>Escribirme desde el formulario</a>
+  </div>
+</template>
+<template id="detalle-redes">
+  <header class="det-cab">
+    <span class="icono"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v5M12 12l-6 5M12 12l6 5"/></svg></span>
+    <div>
+      <span class="estado estado-disponible">Disponible</span>
+      <h3 id="det-titulo" tabindex="-1">Redes, conectividad e infraestructura básica</h3>
+    </div>
+  </header>
+  <p class="det-ideal"><b>Ideal si:</b> Tu internet se cae, hay zonas sin señal o los equipos de tu oficina no se comunican bien.</p>
+  <div class="det-cols">
+    <section aria-labelledby="det-inc"><h4 id="det-inc">Qué incluye</h4><ul><li>Diagnóstico de la causa del problema de conectividad</li><li>Configuración de red LAN y Wi-Fi</li><li>Revisión y organización del cableado</li><li>Recomendaciones para mejorar la red</li></ul>
+      <h4>Alcance</h4><p>Redes de hogar, oficina o negocio pequeño y cableado estructurado básico. Proyectos grandes: previa evaluación.</p></section>
+    <section aria-labelledby="det-resp"><h4 id="det-resp">Con qué lo respaldo</h4><ul><li>Tecnólogo en Sistemas, R&amp;S Soluciones (desde mar 2024): soporte presencial y remoto, instalación y configuración, redes LAN.</li><li>Tecnólogo en Gestión de Redes de Datos, SENA (2022).</li><li>CCNA Routing and Switching: Introducción a redes, Cisco Networking Academy (2020).</li><li>Fundamentos de redes de datos e Introducción al diseño de redes, SENA (60 h cada uno, 2020).</li><li>Organización del cableado de un rack de red (trabajo realizado por mí): fotos del antes y el después en esta ficha.</li><li>Práctica de laboratorio con topologías simuladas en EVE-NG (no es un trabajo para un cliente).</li></ul></section>
+  </div>
+  <section aria-labelledby="det-evid"><h4 id="det-evid">Imágenes</h4><div class="evid"><figure><a href="img/redes-antes.jpg" target="_blank" rel="noopener"><img src="img/redes-antes.jpg" width="720" height="1280" loading="lazy" alt="Rack de red con el cableado desordenado, antes de organizarlo" style="object-position:center 38%;object-fit:cover"></a><figcaption>Antes: rack con el cableado desordenado</figcaption></figure><figure><a href="img/redes-despues.jpg" target="_blank" rel="noopener"><img src="img/redes-despues.jpg" width="720" height="1280" loading="lazy" alt="El mismo rack de red con el cableado ordenado" style="object-position:center 38%;object-fit:cover"></a><figcaption>Después: el mismo rack con el cableado ordenado</figcaption></figure><figure><a href="img/redes-topologia.svg" target="_blank" rel="noopener"><img src="img/redes-topologia.svg" width="640" height="420" loading="lazy" alt="Ilustración: un switch conectando varios equipos de una red local" style="object-position:center;object-fit:contain"></a><figcaption>Redes LAN y cableado ordenado</figcaption></figure><figure><a href="img/redes-wifi.svg" target="_blank" rel="noopener"><img src="img/redes-wifi.svg" width="640" height="420" loading="lazy" alt="Ilustración: un router con ondas de señal Wi-Fi" style="object-position:center;object-fit:contain"></a><figcaption>Wi-Fi con buena cobertura</figcaption></figure></div></section>
+  <div class="det-acc">
+    <a class="btn btn-wa" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20cotizar%3A%20redes%2C%20conectividad%20o%20infraestructura.%20Te%20cuento%20mi%20caso%3A%20" target="_blank" rel="noopener">Cotizar este servicio por WhatsApp</a>
+    <a class="btn btn-sec" href="#contacto" data-cerrar>Escribirme desde el formulario</a>
+  </div>
+</template>
+<template id="detalle-web">
+  <header class="det-cab">
+    <span class="icono"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+    <div>
+      <span class="estado estado-proyecto">Por proyecto</span>
+      <h3 id="det-titulo" tabindex="-1">Páginas web y aplicaciones web</h3>
+    </div>
+  </header>
+  <p class="det-ideal"><b>Ideal si:</b> Quieres que tu negocio tenga presencia en línea o llevar un proceso a una aplicación web.</p>
+  <div class="det-cols">
+    <section aria-labelledby="det-inc"><h4 id="det-inc">Qué incluye</h4><ul><li>Conversación para definir qué necesitas y qué no</li><li>Diseño adaptable a celular y computador</li><li>Desarrollo de la página o aplicación</li><li>Publicación en línea y explicación de cómo usarla</li></ul>
+      <h4>Alcance</h4><p>Se define y se cotiza después de conocer la necesidad. Ejemplos reales: RespiraKids y CEFAE Proyector.</p></section>
+    <section aria-labelledby="det-resp"><h4 id="det-resp">Con qué lo respaldo</h4><ul><li>RespiraKids: aplicación web completa, en línea en respirakids.com (proyecto académico, datos de demostración).</li><li>CEFAE Proyector y su página de producto, publicados en GitHub Pages (producto propio).</li><li>Ambos están hechos con Python, Flask, HTML y CSS.</li></ul></section>
+  </div>
+  <section aria-labelledby="det-evid"><h4 id="det-evid">Imágenes</h4><div class="evid"><figure><a href="img/cuidador-inicio.jpg" target="_blank" rel="noopener"><img src="img/cuidador-inicio.jpg" width="1280" height="1248" loading="lazy" alt="Panel del cuidador en RespiraKids con el semáforo de cada niño" style="object-position:top;object-fit:cover"></a><figcaption>RespiraKids: panel del cuidador (datos ficticios)</figcaption></figure><figure><a href="img/cuidador-celular.jpg" target="_blank" rel="noopener"><img src="img/cuidador-celular.jpg" width="780" height="1688" loading="lazy" alt="Panel del cuidador de RespiraKids en un celular" style="object-position:top;object-fit:cover"></a><figcaption>La misma aplicación, adaptada a celular</figcaption></figure><figure><a href="img/cefae-panel.jpg" target="_blank" rel="noopener"><img src="img/cefae-panel.jpg" width="1400" height="787" loading="lazy" alt="Panel de control de CEFAE Proyector" style="object-position:top;object-fit:contain"></a><figcaption>CEFAE Proyector: panel de control</figcaption></figure><figure><a href="img/cefae-visor.jpg" target="_blank" rel="noopener"><img src="img/cefae-visor.jpg" width="1000" height="562" loading="lazy" alt="Pantalla de proyección de CEFAE con un versículo" style="object-position:top;object-fit:contain"></a><figcaption>CEFAE Proyector: lo que ve el público</figcaption></figure><figure><a href="img/web-diseno.svg" target="_blank" rel="noopener"><img src="img/web-diseno.svg" width="640" height="420" loading="lazy" alt="Ilustración: una página en un navegador y en un celular" style="object-position:center;object-fit:contain"></a><figcaption>Páginas adaptables a celular y computador</figcaption></figure><figure><a href="img/web-proceso.svg" target="_blank" rel="noopener"><img src="img/web-proceso.svg" width="640" height="420" loading="lazy" alt="Ilustración: tres pasos, idea y diseño, desarrollo y publicación" style="object-position:center;object-fit:contain"></a><figcaption>De la idea a tu página publicada</figcaption></figure></div><p class="enl-evid"><a href="https://respirakids.com" target="_blank" rel="noopener">RespiraKids en línea</a> · <a href="https://jovenesdevanguardia.github.io/cefae-proyector/" target="_blank" rel="noopener">Página de CEFAE Proyector</a></p></section>
+  <div class="det-acc">
+    <a class="btn btn-wa" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20cotizar%3A%20una%20p%C3%A1gina%20web%20o%20aplicaci%C3%B3n%20web.%20Te%20cuento%20mi%20caso%3A%20" target="_blank" rel="noopener">Cotizar este servicio por WhatsApp</a>
+    <a class="btn btn-sec" href="#contacto" data-cerrar>Escribirme desde el formulario</a>
+  </div>
+</template>
+<template id="detalle-software">
+  <header class="det-cab">
+    <span class="icono"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span>
+    <div>
+      <span class="estado estado-proyecto">Por proyecto</span>
+      <h3 id="det-titulo" tabindex="-1">Desarrollo de software y funcionalidades personalizadas</h3>
+    </div>
+  </header>
+  <p class="det-ideal"><b>Ideal si:</b> Necesitas una herramienta a tu medida o automatizar algo que hoy haces a mano.</p>
+  <div class="det-cols">
+    <section aria-labelledby="det-inc"><h4 id="det-inc">Qué incluye</h4><ul><li>Definición del alcance conversando contigo</li><li>Desarrollo por fases, con entregas que puedes revisar</li><li>Pruebas automatizadas del código</li><li>Documentación básica de lo construido</li></ul>
+      <h4>Alcance</h4><p>Desarrollos pequeños y medianos, por fases, con una evaluación previa del alcance.</p></section>
+    <section aria-labelledby="det-resp"><h4 id="det-resp">Con qué lo respaldo</h4><ul><li>RespiraKids: más de 390 pruebas automatizadas, integración continua sobre PostgreSQL y despliegue propio con Nginx y Gunicorn.</li><li>CEFAE Proyector: aplicación de escritorio con instalador para Windows y sistema de licencia.</li><li>Todo el código está público, con README y documentación.</li></ul></section>
+  </div>
+  <section aria-labelledby="det-evid"><h4 id="det-evid">Imágenes</h4><div class="evid"><figure><a href="img/profesional-semaforo.jpg" target="_blank" rel="noopener"><img src="img/profesional-semaforo.jpg" width="1280" height="1400" loading="lazy" alt="Panel profesional de RespiraKids con el semáforo de la clínica" style="object-position:top;object-fit:cover"></a><figcaption>RespiraKids: semáforo de la clínica (datos ficticios)</figcaption></figure><figure><a href="img/resultado-evaluacion.jpg" target="_blank" rel="noopener"><img src="img/resultado-evaluacion.jpg" width="1280" height="1492" loading="lazy" alt="Resultado de una evaluación con señales y fuente clínica" style="object-position:top;object-fit:cover"></a><figcaption>RespiraKids: resultado con la fuente de cada señal</figcaption></figure><figure><a href="img/software-codigo.svg" target="_blank" rel="noopener"><img src="img/software-codigo.svg" width="640" height="420" loading="lazy" alt="Ilustración: un editor de código con pruebas aprobadas" style="object-position:center;object-fit:contain"></a><figcaption>Código con pruebas automatizadas</figcaption></figure><figure><a href="img/software-fases.svg" target="_blank" rel="noopener"><img src="img/software-fases.svg" width="640" height="420" loading="lazy" alt="Ilustración: tres fases de desarrollo con tareas" style="object-position:center;object-fit:contain"></a><figcaption>Desarrollo por fases</figcaption></figure></div><p class="enl-evid"><a href="https://github.com/jovenesdevanguardia/respirakids-app" target="_blank" rel="noopener">Código de RespiraKids</a> · <a href="https://github.com/jovenesdevanguardia/respirakids-app/actions" target="_blank" rel="noopener">Pruebas e integración continua</a> · <a href="https://github.com/jovenesdevanguardia/cefae-proyector" target="_blank" rel="noopener">Código de CEFAE Proyector</a></p></section>
+  <div class="det-acc">
+    <a class="btn btn-wa" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20cotizar%3A%20desarrollo%20de%20software%20o%20una%20funcionalidad%20personalizada.%20Te%20cuento%20mi%20caso%3A%20" target="_blank" rel="noopener">Cotizar este servicio por WhatsApp</a>
+    <a class="btn btn-sec" href="#contacto" data-cerrar>Escribirme desde el formulario</a>
+  </div>
+</template>
+<template id="detalle-datos">
+  <header class="det-cab">
+    <span class="icono"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span>
+    <div>
+      <span class="estado estado-disponible">Disponible</span>
+      <h3 id="det-titulo" tabindex="-1">Bases de datos, consultas SQL y gestión de información</h3>
+    </div>
+  </header>
+  <p class="det-ideal"><b>Ideal si:</b> Tu información está en muchos archivos y necesitas ordenarla, consultarla o sacar reportes.</p>
+  <div class="det-cols">
+    <section aria-labelledby="det-inc"><h4 id="det-inc">Qué incluye</h4><ul><li>Modelado de la información: tablas y relaciones</li><li>Consultas SQL y reportes</li><li>Organización de la información que ya tienes</li><li>Cambios ordenados y versionados en la base de datos</li></ul>
+      <h4>Alcance</h4><p>PostgreSQL, MySQL y SQLite. Revisión de lo que ya existe o diseño desde cero.</p></section>
+    <section aria-labelledby="det-resp"><h4 id="det-resp">Con qué lo respaldo</h4><ul><li>RespiraKids: base de datos PostgreSQL con 25 tablas y 13 migraciones versionadas.</li><li>Conocimientos en PostgreSQL, MySQL y SQLite.</li></ul></section>
+  </div>
+  <section aria-labelledby="det-evid"><h4 id="det-evid">Imágenes</h4><div class="evid"><figure><a href="img/profesional-expediente.jpg" target="_blank" rel="noopener"><img src="img/profesional-expediente.jpg" width="1280" height="1517" loading="lazy" alt="Expediente de RespiraKids con gráfico de evolución e historial" style="object-position:top;object-fit:cover"></a><figcaption>RespiraKids: reportes e historial generados desde la base de datos (datos ficticios)</figcaption></figure><figure><a href="img/datos-tablas.svg" target="_blank" rel="noopener"><img src="img/datos-tablas.svg" width="640" height="420" loading="lazy" alt="Ilustración: tres tablas de datos conectadas" style="object-position:center;object-fit:contain"></a><figcaption>Modelado de la información</figcaption></figure><figure><a href="img/datos-reportes.svg" target="_blank" rel="noopener"><img src="img/datos-reportes.svg" width="640" height="420" loading="lazy" alt="Ilustración: una consulta SQL y un gráfico de barras" style="object-position:center;object-fit:contain"></a><figcaption>Consultas SQL y reportes</figcaption></figure></div><p class="enl-evid"><a href="https://github.com/jovenesdevanguardia/respirakids-app/tree/main/app/models" target="_blank" rel="noopener">Modelos de datos (25 tablas)</a> · <a href="https://github.com/jovenesdevanguardia/respirakids-app/tree/main/migrations" target="_blank" rel="noopener">Migraciones</a></p></section>
+  <div class="det-acc">
+    <a class="btn btn-wa" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20cotizar%3A%20una%20base%20de%20datos%2C%20consultas%20SQL%20o%20gesti%C3%B3n%20de%20informaci%C3%B3n.%20Te%20cuento%20mi%20caso%3A%20" target="_blank" rel="noopener">Cotizar este servicio por WhatsApp</a>
+    <a class="btn btn-sec" href="#contacto" data-cerrar>Escribirme desde el formulario</a>
+  </div>
+</template>
+<template id="detalle-asesoria">
+  <header class="det-cab">
+    <span class="icono"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span>
+    <div>
+      <span class="estado estado-consulta">Bajo consulta</span>
+      <h3 id="det-titulo" tabindex="-1">Asesoría y acompañamiento tecnológico</h3>
+    </div>
+  </header>
+  <p class="det-ideal"><b>Ideal si:</b> No sabes por dónde empezar con la tecnología de tu negocio y quieres una opinión clara.</p>
+  <div class="det-cols">
+    <section aria-labelledby="det-inc"><h4 id="det-inc">Qué incluye</h4><ul><li>Una conversación para entender tu situación</li><li>Recomendaciones según tu necesidad y presupuesto</li><li>Orientación sobre por dónde empezar</li><li>Si no puedo ayudarte, te digo a quién acudir</li></ul>
+      <h4>Alcance</h4><p>Se acuerda según el caso. Escríbeme y vemos si puedo ayudarte o a quién acudir.</p></section>
+    <section aria-labelledby="det-resp"><h4 id="det-resp">Con qué lo respaldo</h4><ul><li>Tecnólogo en Sistemas, R&amp;S Soluciones (desde mar 2024): soporte presencial y remoto, instalación y configuración, redes LAN.</li><li>Experiencia explicando problemas técnicos a usuarios en mis cargos de soporte.</li><li>Es el servicio que más depende de cada caso; por eso está «bajo consulta».</li></ul></section>
+  </div>
+  <section aria-labelledby="det-evid"><h4 id="det-evid">Imágenes</h4><div class="evid"><figure><a href="img/asesoria-conversacion.svg" target="_blank" rel="noopener"><img src="img/asesoria-conversacion.svg" width="640" height="420" loading="lazy" alt="Ilustración: dos globos de diálogo, tu necesidad y mi recomendación" style="object-position:center;object-fit:contain"></a><figcaption>Una conversación clara, sin tecnicismos</figcaption></figure><figure><a href="img/asesoria-ruta.svg" target="_blank" rel="noopener"><img src="img/asesoria-ruta.svg" width="640" height="420" loading="lazy" alt="Ilustración: tres pasos conectados, escuchar, evaluar opciones y plan claro" style="object-position:center;object-fit:contain"></a><figcaption>Por dónde empezar, paso a paso</figcaption></figure></div></section>
+  <div class="det-acc">
+    <a class="btn btn-wa" href="https://wa.me/573225926739?text=Hola%20Bayron%2C%20vi%20tu%20sitio%20web%20y%20quiero%20cotizar%3A%20asesor%C3%ADa%20o%20acompa%C3%B1amiento%20tecnol%C3%B3gico.%20Te%20cuento%20mi%20caso%3A%20" target="_blank" rel="noopener">Cotizar este servicio por WhatsApp</a>
+    <a class="btn btn-sec" href="#contacto" data-cerrar>Escribirme desde el formulario</a>
+  </div>
+</template>
+
+<script>
+(function () {
+  var raiz = document.documentElement;
+  try { var guardado = localStorage.getItem('tema'); if (guardado) raiz.setAttribute('data-theme', guardado); } catch (e) {}
+  document.getElementById('tema').addEventListener('click', function () {
+    var oscuro = raiz.getAttribute('data-theme') === 'dark' ||
+      (!raiz.getAttribute('data-theme') && !window.matchMedia('(prefers-color-scheme: light)').matches);
+    var nuevo = oscuro ? 'light' : 'dark';
+    raiz.setAttribute('data-theme', nuevo);
+    try { localStorage.setItem('tema', nuevo); } catch (e) {}
+  });
+
+  var btn = document.getElementById('menu-btn'), nav = document.getElementById('nav');
+  btn.addEventListener('click', function () {
+    var abierto = nav.classList.toggle('abierto');
+    btn.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') { nav.classList.remove('abierto'); btn.setAttribute('aria-expanded', 'false'); } });
+
+  // Enlace activo según la sección visible
+  var enlaces = [].slice.call(document.querySelectorAll('a.enlace'));
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function (items) {
+      items.forEach(function (it) {
+        if (it.isIntersecting) {
+          enlaces.forEach(function (a) { a.removeAttribute('aria-current'); });
+          var a = document.querySelector('a.enlace[href="#' + it.target.id + '"]');
+          if (a) a.setAttribute('aria-current', 'true');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    ['servicios', 'proyectos', 'proceso', 'perfil', 'preguntas'].forEach(function (id) { var s = document.getElementById(id); if (s) obs.observe(s); });
+  }
+
+
+  // Detalle de cada servicio (ventana modal accesible)
+  var dlg = document.getElementById('detalle'), cuerpo = document.getElementById('detalle-cuerpo');
+  var orden = ["soporte", "sistemas", "redes", "web", "software", "datos", "asesoria"], actual = null, disparador = null;
+  function abrirServicio(id, sinHash) {
+    var t = document.getElementById('detalle-' + id);
+    if (!t) return;
+    cuerpo.innerHTML = '';
+    cuerpo.appendChild(t.content.cloneNode(true));
+    [].forEach.call(cuerpo.querySelectorAll('iframe[data-src]'), function (f) { f.src = f.getAttribute('data-src'); });
+    actual = id;
+    if (!dlg.open) { if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', ''); }
+    document.body.classList.add('modal-open');
+    dlg.scrollTop = 0;
+    var h = cuerpo.querySelector('#det-titulo'); if (h) h.focus({ preventScroll: true });
+    if (!sinHash) { try { history.replaceState(null, '', '#servicio-' + id); } catch (e) {} }
+  }
+  function cerrarServicio() { if (dlg.open) dlg.close(); }
+  dlg.addEventListener('close', function () {
+    cuerpo.innerHTML = '';
+    document.body.classList.remove('modal-open');
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+    if (disparador && document.contains(disparador)) disparador.focus();
+    actual = null;
+  });
+  dlg.addEventListener('click', function (e) {
+    if (e.target === dlg) cerrarServicio();
+    var a = e.target.closest && e.target.closest('a[data-cerrar]');
+    if (a) cerrarServicio();
+  });
+  document.getElementById('det-cerrar').addEventListener('click', cerrarServicio);
+  function mover(d) {
+    var i = orden.indexOf(actual); if (i < 0) return;
+    abrirServicio(orden[(i + d + orden.length) % orden.length]);
+  }
+  document.getElementById('det-ant').addEventListener('click', function () { mover(-1); });
+  document.getElementById('det-sig').addEventListener('click', function () { mover(1); });
+  [].forEach.call(document.querySelectorAll('.abre'), function (b) {
+    b.addEventListener('click', function () { disparador = b; abrirServicio(b.getAttribute('data-servicio')); });
+  });
+  if (/^#servicio-/.test(location.hash)) {
+    var idIni = location.hash.replace('#servicio-', '');
+    if (orden.indexOf(idIni) >= 0) { var tarj = document.getElementById('servicio-' + idIni); disparador = tarj && tarj.querySelector('.abre'); abrirServicio(idIni, true); }
+  }
+
+  // Formulario: arma el mensaje y abre WhatsApp o el correo. No envía nada por sí mismo.
+  var form = document.getElementById('form'), via = 'wa';
+  [].forEach.call(form.querySelectorAll('button[type=submit]'), function (b) {
+    b.addEventListener('click', function () { via = b.getAttribute('data-via'); });
+  });
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var nombre = form.nombre.value.trim(), mensaje = form.mensaje.value.trim(), ok = true;
+    document.getElementById('e-nombre').textContent = nombre ? '' : 'Escribe tu nombre.';
+    document.getElementById('e-mensaje').textContent = mensaje ? '' : 'Cuéntame brevemente qué necesitas.';
+    if (!nombre) { form.nombre.focus(); ok = false; } else if (!mensaje) { form.mensaje.focus(); ok = false; }
+    if (!ok) return;
+    var partes = ['Hola Bayron, soy ' + nombre + '.', 'Motivo: ' + form.motivo.value + '.'];
+    if (form.servicio.value) partes.push('Servicio de interés: ' + form.servicio.value + '.');
+    partes.push(mensaje);
+    if (form.contacto.value.trim()) partes.push('Puedes responderme a: ' + form.contacto.value.trim());
+    var texto = partes.join('\n\n');
+    if (via === 'correo') {
+      location.href = 'mailto:bayronvasquezz.c@gmail.com?subject=' + encodeURIComponent('Consulta desde tu sitio web: ' + form.motivo.value) + '&body=' + encodeURIComponent(texto);
+    } else {
+      window.open('https://wa.me/573225926739?text=' + encodeURIComponent(texto), '_blank', 'noopener');
+    }
+  });
+})();
+</script>
 </body>
 </html>
